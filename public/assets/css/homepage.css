@@ -1,0 +1,15 @@
+.jumbotron
+{
+	background-image: url('../img/e.jpg');
+	
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	background-color: white;
+	
+}
+.jumbotron .container
+{
+	position: relative;
+	
+}
