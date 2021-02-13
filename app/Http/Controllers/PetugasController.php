@@ -6,14 +6,10 @@ use Illuminate\Http\Request;
 
 class PetugasController extends Controller
 {
-  public function Homepage()
-  {   
-        return view('Petugas/TambahPetugas');
-    
-}
-    public function index()
+  
+    public function Homepage()
     {
-        //
+       return view('Petugas/TablePetugas');  
     }
 
     /**
@@ -23,7 +19,7 @@ class PetugasController extends Controller
      */
     public function create()
     {
-        //
+        return view('Petugas/TambahPetugas');
     }
 
     /**
@@ -43,9 +39,10 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function DetailPetugas()
     {
-        //
+        return view('Petugas/DetailPetugas');  
+   
     }
 
     /**
@@ -54,9 +51,11 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function EditPetugas()
     {
-        //
+        
+             return view('Petugas/EditPetugas');  
+   
     }
 
     /**

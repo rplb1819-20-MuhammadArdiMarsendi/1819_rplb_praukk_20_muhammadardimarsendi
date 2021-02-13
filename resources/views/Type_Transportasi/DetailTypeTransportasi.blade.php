@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LOGIN</title>
+	<title>Detail Type Transportasi</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	
 	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
 </head>
 <body>
@@ -29,47 +31,26 @@
 </nav>
 	<div class="container">
 		<div class="row content">
-			<div class="col-md-6 mb-3">
-				<img src="../assets/img/c.svg" class="img-fluid " alt="image">
+			<div class="col-md-6 mb-3 mt-3">
+				<img src="../assets/img/g.svg" class="img-fluid " alt="image">
 			</div>
 			<div class="col-md-6">
-				<h3 class="signin-text mb-5" style="text-align: center;">Tambah Petugas</span></h3>
+				<h3 class="signin-text mb-5" style="text-align: center;">Detail Type Transportasi</span></h3>
 				
-				<form>
-					<div class="form-group">
-						<label for="email">ID PETUGAS</label>
-						<input type="email" name="email" class="form-control">
-					</div>
-					<div>
-						<div class="form-group">
-						<label for="username">Username</label>
-						<input type="username" name="username" class="form-control">
-						</div>
-					<div>
-					<div>
-						<div class="form-group">
-						<label for="password">Password</label>
-						<input type="password" name="password" class="form-control">
-						</div>
-					<div>
-					<div>
-						<div class="form-group">
-						<label for="namapenumpang">Nama Petugas</label>
-						<input type="namapenumpang" name="namapenumpang" class="form-control">
-					</div>
-					<div>
-						<div class="form-group">
-						<label for="id_level">ID LEVEL</label>
-						<input type="id_level" name="id_level" class="form-control">
-						</div>
-					<div>
-					<div>
-						<button class="btn btn-class">Tambah</button>
-				</form>
+				<h6 class="text-info">ID TYPE TRANSPORTASI</h6>
+		        <h3>1</h3>
+
+		      <h6 class="text-info">NAMA TYPE</h6>
+        		<p>Ynto</p>
+
+            <h6 class="text-info">KETERANGAN</h6>
+            <p>Ynto</p>
+
 			</div>
 		</div>
 	</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script></body>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>

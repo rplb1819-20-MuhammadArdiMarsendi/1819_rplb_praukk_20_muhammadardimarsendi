@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Transportasi;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TransportasiController extends Controller
+class PenumpangController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function Homepage()
     {
-        //
+       return view("Penumpang/TablePenumpang");
     }
 
     /**
@@ -22,9 +21,9 @@ class TransportasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function TambahPenumpang()
     {
-        //
+        return view("Penumpang/TambahPenumpang");
     }
 
     /**
@@ -44,9 +43,9 @@ class TransportasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function DetailPenumpang()
     {
-        //
+        return view ("Penumpang/DetailPenumpang");
     }
 
     /**
@@ -55,9 +54,10 @@ class TransportasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function EditPenumpang()
     {
-        //
+        return view("Penumpang/EditPenumpang");
+        
     }
 
     /**

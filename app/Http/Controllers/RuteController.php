@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Route;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RouteController extends Controller
+class RuteController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function Homepage()
     {
-        //
+        return view("Rute/TableRute");
     }
 
     /**
@@ -22,9 +21,9 @@ class RouteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function TambahRute()
     {
-        //
+       return view("Rute/TambahRute");
     }
 
     /**
@@ -44,9 +43,9 @@ class RouteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function DetailRute()
     {
-        //
+        return view ("Rute/DetailRute");
     }
 
     /**
@@ -55,9 +54,9 @@ class RouteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function EditRute()
     {
-        //
+        return view("Rute/EditRute");
     }
 
     /**

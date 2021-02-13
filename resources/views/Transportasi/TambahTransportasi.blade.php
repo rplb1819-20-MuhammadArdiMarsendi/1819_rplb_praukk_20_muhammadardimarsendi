@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LOGIN</title>
+	<title>Tambah Transportasi</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
 	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">TRAVELLING HYUNG</a>
+    <a class="navbar-brand" href="#">TRAVELLING</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,33 +35,32 @@
 				<img src="../assets/img/c.svg" class="img-fluid " alt="image">
 			</div>
 			<div class="col-md-6">
-				<h3 class="signin-text mb-5" style="text-align: center;">Tambah Petugas</span></h3>
+				<h3 class="signin-text mb-5" style="text-align: center;">Tambah transportasi</span></h3>
 				
 				<form>
 					<div class="form-group">
-						<label for="email">ID PETUGAS</label>
-						<input type="email" name="email" class="form-control">
+						<label for="id_rute">ID Transportasi</label>
+						<input type="id_rute" name="id_rute" class="form-control">
 					</div>
 					<div>
 						<div class="form-group">
-						<label for="username">Username</label>
+						<label for="tujuan">KODE</label>
+						<input type="tujuan" name="tujuan" class="form-control">
+						</div>
+					<div>
+						<div class="form-group">
+						<label for="username">JUMLAH KURSI</label>
 						<input type="username" name="username" class="form-control">
 						</div>
 					<div>
 					<div>
 						<div class="form-group">
-						<label for="password">Password</label>
+						<label for="password">KETERANGAN</label>
 						<input type="password" name="password" class="form-control">
 						</div>
 					<div>
-					<div>
 						<div class="form-group">
-						<label for="namapenumpang">Nama Petugas</label>
-						<input type="namapenumpang" name="namapenumpang" class="form-control">
-					</div>
-					<div>
-						<div class="form-group">
-						<label for="id_level">ID LEVEL</label>
+						<label for="id_level">ID TYPE TRANSPORTASI</label>
 						<input type="id_level" name="id_level" class="form-control">
 						</div>
 					<div>
@@ -69,7 +70,8 @@
 			</div>
 		</div>
 	</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script></body>
+
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>

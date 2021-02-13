@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Penumpang;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PenumpangController extends Controller
+class TypeTransportasiController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function Homepage()
     {
-        //
+        return view("Type_Transportasi/TableTypeTransportasi");
     }
 
     /**
@@ -22,9 +21,10 @@ class PenumpangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function TambahTypeTransportasi()
     {
-        //
+        return view("Type_Transportasi/TambahTypeTransportasi");
+        
     }
 
     /**
@@ -44,9 +44,10 @@ class PenumpangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function DetailTypeTransportasi()
     {
-        //
+        return view("Type_Transportasi/DetailTypeTransportasi");
+        
     }
 
     /**
@@ -55,9 +56,10 @@ class PenumpangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function EditTypeTransportasi()
     {
-        //
+        return view("Type_Transportasi/EditTypeTransportasi");
+      
     }
 
     /**

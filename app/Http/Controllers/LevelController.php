@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Level;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class LevelController extends Controller
@@ -12,9 +11,9 @@ class LevelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function Homepage()
     {
-        //
+        return view("Level/TableLevel");
     }
 
     /**
@@ -22,9 +21,9 @@ class LevelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function TambahLevel()
     {
-        //
+        return view("Level/TambahLevel");
     }
 
     /**
@@ -44,9 +43,10 @@ class LevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function DetailLevel()
     {
-        //
+        return view("Level/DetailLevel");
+        
     }
 
     /**
@@ -55,9 +55,9 @@ class LevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function EditLevel()
     {
-        //
+        return view("Level/EditLevel");
     }
 
     /**
