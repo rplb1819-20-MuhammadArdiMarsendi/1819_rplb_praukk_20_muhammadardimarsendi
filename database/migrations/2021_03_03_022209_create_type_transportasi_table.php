@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLevelsTable extends Migration
+class CreateTypeTransportasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateLevelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('levels', function (Blueprint $table) {
-             $table->increments('id');
-            $table->string('nama_level');
+        Schema::create('type_transportasi', function (Blueprint $table) {
+            $table->id();
+            $table->enum('nama_type',['kereta','pesawat']);
+            $table->text('keterangan');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateLevelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('levels');
+        Schema::dropIfExists('type_transportasi');
     }
 }
