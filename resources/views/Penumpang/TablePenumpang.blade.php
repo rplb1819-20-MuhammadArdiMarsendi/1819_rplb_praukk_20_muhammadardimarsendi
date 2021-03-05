@@ -1,129 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Table Rute</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	
-<!-- 	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
- --></head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+</head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">TRAVELLING HYUNG</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('Login')}}">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Konfirmasi Pembayaran</a>
-        </li>
-      </ul>
+    @include('layouts.app')
+    
+    <br>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">username</th>
+                    <th scope="col">password</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Tanggal Lahir</th>
+                    <th scope="col">Kelamin</th>
+                    <th scope="col">Telepon</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>santuyyy</td>
+                    <td>uehcfui4rehjep</td>
+                    <td>Felica</td>
+                    <td>Jl. Apel No 11</td>
+                    <td>02-08-2003</td>
+                    <td>Perempuan</td>
+                    <td>081265578982</td>
+                    <td class="d-flex justify-content-between">
+                        <a href="{{route('Tambah.penumpang')}}"><i class="fas fa-plus"></i></a>                       
+                        <a href="{{route('Edit.penumpang')}}"><i class="fas fa-pen"></i></a>
+                        <a href="{{route('Detail.penumpang')}}"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>aenjeaye</td>
+                    <td>lnhilokpokpd</td>
+                    <td>Adam</td>
+                    <td>Jl. Akasia No 9</td>
+                    <td>20-05-2003</td>
+                    <td>Laki-laki</td>
+                    <td>081265573211</td>
+                    <td class="d-flex justify-content-between">
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                        <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>sabebin</td>
+                    <td>erhirkvkui</td>
+                    <td>Mark</td>
+                    <td>Jl. Pahlawan No 29</td>
+                    <td>20-05-2001</td>
+                    <td>Laki-laki</td>
+                    <td>081265505511</td>
+                    <td class="d-flex justify-content-between">
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                        <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
-</nav>
-	<div class="container">
-    <h3 class="text-center font-weight-bold" style="margin-bottom: 10px;">TABEL Penumapng</h3>
-  
-  <div class="row">
-    <div class="col-sm-10">
-      <form class="form-inline" style="margin-bottom:10px;"  method="GET" action="/Kelas">
-        <input type="text" name="Cari" class="form-control" style="margin-bottom:1px;">
-        <button type="submit" class="btn btn-dark" style="margin-left:10px; margin-bottom: 10px;">Cari</button>
-      </form>
-    </div>
-    
-    <div class="col-sm-2">
-      <a href="" class="btn btn-dark float-right">tambah</a>
-    </div>
-
-  </div>
-  <div class="row">
-    
-    
-    
-
-  </div>
-		<table class="table table-bordered" style="margin-top: 1%;">
-  <thead>
-    <tr>
-      <th scope="col">ID PENUMPANG</th>
-      <th scope="col">USERNAME</th>
-      <th scope="col">PASSWORD</th>
-      <th scope="col">NAMA PENUMPANG</th>
-      <th scope="col">ALAMAT PENUMPANG</th>
-      <th scope="col">TANGGAL LAHIR</th>
-      <th scope="col">JENIS KELAMIN</th>
-      <th scope="col">TELEPHONE</th>
-      <th scope="col">AKSI</th>
-
-
-    </tr>
-  </thead>
-      
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>  
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Detail</a>
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Edit</a>
-      <button class="btn btn-light" style="margin-bottom: 10px;">Hapus</button>
-</td>
-
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@fat</td>
-       <td>@mdo</td>
-      <td>@mdo</td>
-
-      <td>@mdo</td>
-      <td>  
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Detail</a>
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Edit</a>
-      <button class="btn btn-light" style="margin-bottom: 10px;">Hapus</button>
-</td>
-
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>@twitter</td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-       <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-
-      <td>  
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Detail</a>
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Edit</a>
-      <button class="btn btn-light" style="margin-bottom: 10px;">Hapus</button>
-</td>
-
-    </tr>
-  </tbody>
-</table>
-	</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
-</body>
+
 </html>

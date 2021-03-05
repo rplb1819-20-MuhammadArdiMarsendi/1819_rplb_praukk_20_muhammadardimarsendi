@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type_Transportasi extends Model
 {
-    //
+     public $table = "type_transportasi";
 }

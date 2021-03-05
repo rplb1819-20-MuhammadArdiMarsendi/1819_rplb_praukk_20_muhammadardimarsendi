@@ -16,9 +16,9 @@ class CreatePenumpangTable extends Migration
         Schema::create('penumpang', function (Blueprint $table) {
            $table->id();
            $table->foreignId('route_id')->constrained('routes');
-            $table->string('username',255);
-            $table->string('password',255);
-            $table->string('nama_penumpang',255);
+            $table->string('username')->unique();
+            $table->string('password');
+            $table->string('nama_penumpang');
             $table->text('alamat_penumpang');
             $table->date('tanggal_lahir');
             $table->enum('jenis_kelamin',['laki-laki','perempuan']);

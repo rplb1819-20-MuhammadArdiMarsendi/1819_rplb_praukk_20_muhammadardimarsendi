@@ -1,43 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tambah Type Transportasi</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ticket Pedia</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">TRAVELLING</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('Login')}}">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Konfirmasi Pembayaran</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-	<div class="container">
-		<div class="row content">
-			<div class="col-md-6 mb-3">
-				<img src="../assets/img/c.svg" class="img-fluid " alt="image">
-			</div>
-			<div class="col-md-6">
-				<h3 class="signin-text mb-5" style="text-align: center;">TAMBAH TYPE TRANSPORTASI</span></h3>
-				
-				<form>
+
+<body class="hold-transition login-page">
+    @include('layouts.app2')
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height:100vh">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <p class="h4">Tambah <b>Type Transportasi</b></p>
+                        </div>
+                        <br>
+                        <form>
 					<div class="form-group">
 						<label for="id_rute">ID TYPE TRANSPORTASI</label>
 						<input type="id_rute" name="id_rute" class="form-control">
@@ -52,13 +36,13 @@
 						</div>
 					<div>
 					<div>
-						<button class="btn btn-class">Tambah</button>
+						<button class="btn btn-primary">Tambah</button>
 				</form>
-			</div>
-		</div>
-	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-</body>
-</body>
 </html>

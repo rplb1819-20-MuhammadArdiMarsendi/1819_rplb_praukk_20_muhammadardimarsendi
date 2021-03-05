@@ -15,7 +15,7 @@ class CreatePetugasTable extends Migration
     {
         Schema::create('petugas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('level_id')->constrained('levels');
+            $table->foreignId('level_id')->constrained('levels')->unique();
             $table->string('username');
             $table->string('password');
             $table->string('nama_petugas');

@@ -19,6 +19,7 @@ class CreateTransportasiTable extends Migration
         $table->string('kode_transportasi',10);
         $table->integer('jumlah_kursi');
         $table->text('keterangan');
+        $table->timestamps();
         });
     }
 

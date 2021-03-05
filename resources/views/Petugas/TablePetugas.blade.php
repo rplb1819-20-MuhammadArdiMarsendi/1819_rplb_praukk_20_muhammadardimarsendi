@@ -1,107 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Edit Petugas</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	
-<!-- 	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
- --></head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+</head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">TRAVELLING HYUNG</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('Login')}}">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Konfirmasi Pembayaran</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-	<div class="container">
-    <h3 class="text-center font-weight-bold" style="margin-bottom: 10px;">TABEL PETUGAS</h3>
-  
-  <div class="row">
-    <div class="col-sm-10">
-      <form class="form-inline" style="margin-bottom:10px;"  method="GET" action="/Kelas">
-        <input type="text" name="Cari" class="form-control" style="margin-bottom:1px;">
-        <button type="submit" class="btn btn-dark" style="margin-left:10px; margin-bottom: 10px;">Cari</button>
-      </form>
-    </div>
+    @include('layouts.app')
     
-    <div class="col-sm-2">
-      <a href="" class="btn btn-dark float-right">tambah</a>
+    <br>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">username</th>
+                    <th scope="col">password</th>
+                    <th scope="col">nama petugas</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>admin</td>
+                    <td>xxxx</td>
+                    <td>aezakmi</td>
+                    <td>alicia</td>
+                    <td class="d-flex justify-content-between">
+                        <a href="{{route('Tambah.petugas')}}"><i class="fas fa-plus"></i></a>
+                        <a href="{{route('Edit.petugas')}}"><i class="fas fa-pen"></i></a>
+                        <a href="{{route('Detail.petugas')}}"><i class="fas fa-eye"></i></a>
+                        <a href=""><i class="fas fa-minus"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                     <td>admin</td>
+                    <td>xxxx</td>
+                    <td>aezakmi</td>
+                    <td>alicia</td>
+                    <td class="d-flex justify-content-between">
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                        <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                     <td>admin</td>
+                    <td>xxxx</td>
+                    <td>aezakmi</td>
+                    <td>alicia</td>
+                    <td class="d-flex justify-content-between">
+                        <a href="#"><i class="fas fa-eye"></i></a>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                        <a href="#"><i class="fas fa-pen"></i></a>
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-  </div>
-  <div class="row">
-		<table class="table table-bordered" style="margin-top: 1%;">
-  <thead>
-    <tr>
-      <th scope="col">ID PETUGAS</th>
-      <th scope="col">USERNAME</th>
-      <th scope="col">PASSWORD</th>
-      <th scope="col">NAMA</th>
-      <th scope="col">ID LEVEL</th>
-      <th scope="col">AKSI</th>
-
-
-    </tr>
-  </thead>
-      
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>	
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Detail</a>
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Edit</a>
-      <button class="btn btn-light" style="margin-bottom: 10px;">Hapus</button>
-</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@fat</td>
-<td>	
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Detail</a>
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Edit</a>
-      <button class="btn btn-light" style="margin-bottom: 10px;">Hapus</button>
-</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>@twitter</td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-<td>	
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Detail</a>
-      <a href="" class="btn btn-light" style="margin-bottom: 10px;">Edit</a>
-      <button class="btn btn-light" style="margin-bottom: 10px;">Hapus</button>
-</td>
-    </tr>
-  </tbody>
-</table>
-	</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
-</body>
+
 </html>

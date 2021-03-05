@@ -16,13 +16,14 @@ class CreateRoutesTable extends Migration
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('transportasi_id')->constrained('transportasi');
-            $table->string('tujuan',255);
-            $table->string('rute_awal',255);
-            $table->string('rute_akhir',255);
-            $table->integer('jam_cekin');
-            $table->integer('jam_berangkat');
-            $table->integer('harga');
-           
+             $table->string('kota_awal');
+            $table->string('kota_akhir');
+            $table->string('rute_awal');
+            $table->string('rute_akhir');
+            $table->time('jam_cekin');
+            $table->time('jam_berangkat');
+            $table->date('tanggal_berangkat');
+            $table->bigInteger('harga');      
             $table->timestamps();
         });
     }

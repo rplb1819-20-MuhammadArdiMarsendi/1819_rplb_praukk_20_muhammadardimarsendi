@@ -26,12 +26,12 @@ class DatabaseSeeder extends Seeder
 	        // $this->call(UserSeeder::class);
 	        factory(User::class,20)->create();
             factory(Type_Transportasi::class,50)->create();
-            factory(Transportasi::class,50)->create();
-            factory(Route::class,50)->create();
+            // factory(Transportasi::class,50)->create();
+            // factory(Route::class,50)->create();
              factory(Level::class,50)->create();
-             factory(Petugas::class,50)->create();
-	        factory(Penumpang::class,50)->create();
-	        factory(Pemesanan::class,50)->create();
+              // factory(Petugas::class,50)->create();
+	        // factory(Penumpang::class,50)->create();
+	        // factory(Pemesanan::class,50)->create();
 	        
 	        
 	        

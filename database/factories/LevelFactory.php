@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Model\Level\Level::class, function (Faker $faker) {
     return [
-        'nama_level'=>$faker->name,
+        'nama_level' => $faker->randomElement(['petugas' ,'admin']),
     ];
 });
