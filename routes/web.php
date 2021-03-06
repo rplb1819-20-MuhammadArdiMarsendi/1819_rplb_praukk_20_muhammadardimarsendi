@@ -23,7 +23,14 @@ Route::get('/User/', 'UserController@Homepage')->name('Homepage');
 Route::get('/User/Login', 'UserController@Login')->name('Login');
 // ROUTE USER YANG MENGARAHKAN UNTUK KE REGISTER
 Route::get('/User/Register', 'UserController@Register')->name('Register');
+
 Route::get('/User/Dashboard', 'UserController@CekLoginPetugas')->name('Dashboard');
+//ROUTE UNTUK MEMPROSES LOGIN
+Route::post('/User/ProsesLogin', 'UserController@ProsesLogin')->name('Proses.Login');
+// ROUTE USER YANG MENGARAHKAN UNTUK KE REGISTER
+Route::get('/User/Register', 'UserController@Register')->name('Register');
+//ROUTE UNTUK MEMPROSES REGISTER
+Route::post('/User/ProsesRegister', 'UserController@ProsesRegister')->name('Proses.Register');
 
 //Petugas
 Route::get('/Petugas', 'PetugasController@Homepage')->name('Index.petugas');
@@ -53,6 +60,7 @@ Route::get('/Penumpang/DetailPenumpang', 'PenumpangController@DetailPenumpang')-
 //LEVEL
 Route::get('/Level', 'LevelController@Homepage')->name('Index.level');
 Route::get('/Level/TambahLevel', 'LevelController@TambahLevel')->name('Tambah.level');
+Route::post('/Level/Prosestambahlevel','LevelController@ProsesTambahLevel')->name('proses.tambah');
 Route::get('/Level/EditLevel', 'LevelController@EditLevel')->name('Edit.level');
 Route::get('/Level/DetailLevel', 'LevelController@DetailLevel')->name('Detail.level');
 

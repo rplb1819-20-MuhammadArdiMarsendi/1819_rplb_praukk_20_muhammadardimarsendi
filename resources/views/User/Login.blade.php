@@ -21,18 +21,27 @@
                             <p class="h4">TICKET<b>PEDIA</b></p>
                         </div>
                         <br>
-                        <form action="" autocomplete="off">
+						<form method="POST" 
+						action="{{route('Proses.Login')}}"
+						 autocomplete="off">
+							 @csrf
+						        {{csrf_field()}}
                             <div class="form-group">
-                                <input type="text" class="form-control" name="username" placeholder="username">
+                            <label for="InputName">Name</label>
+                                <input type="text" class="form-control" name="username" placeholder="username" id="InputName">
                             </div>
                             <br>
+
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="password">
+					          <label for="InputPassword">Password</label>
+
+                                <input type="password" class="form-control" name="password" placeholder="password" id="InputPassword">
                             </div>
                             <br>
                             <div class="d-flex justify-content-between">
-                            <button type="button" id="sendlogin" class="btn btn-primary">Login</button>
-                            <a href="#">Create an account</a>
+                            <button type="submit" id="sendlogin" class="btn btn-primary">Login</button id="button">
+                            	<a href="{{route('Register')}}" id="button">Create an account</a>
+                            
                             </div>
                         </form>
                     </div>

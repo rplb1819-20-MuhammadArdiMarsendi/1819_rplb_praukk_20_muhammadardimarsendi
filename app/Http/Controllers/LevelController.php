@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Level\Level;
 
 class LevelController extends Controller
 {
@@ -13,7 +14,8 @@ class LevelController extends Controller
      */
     public function Homepage()
     {
-        return view("Level/TableLevel");
+        $data_level = Level::all();
+        return view("Level/TableLevel",compact('data_level'));
     }
 
     /**

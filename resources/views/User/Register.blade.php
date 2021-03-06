@@ -1,43 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>REGISTER
-	</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">		
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ticket Pedia</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
-<body>
-	<div class="container">
-		<div class="row content">
-			<div class="col-md-6 mb-3">
-				<img src="../assets/img/c.svg" class="img-fluid" alt="image">
-			</div>
-			<div class="col-md-6">
-				<h3 class="regis-text mb-3"></h3>
-				<form>
-				<div class="form-group">
-						<label for="Email">Email</label>
-						<input type="Email" name="Email" class="form-control">
-				</div>
-				<div class="form-group">
-						<label for="Username">Username</label>
-						<input type="Username" name="Username" class="form-control">
-				</div>
-				<div class="form-group">
-						<label for="Password">Password</label>
-						<input type="Password" name="Password" class="form-control">
-				</div>
-					<div class="form-group form-check">
-						<input type="checkbox" name="checkbox" class="form-check-input" id="checkbox">
-						<label class="form-check-label" for="checkbox">Remember me</label>
-						
-						</div>
-						<button class="btn btn-class">Register</button>
+
+<body class="hold-transition login-page">
+    @include('layouts.app2')
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height:100vh">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <p class="h4">TICKET<b>PEDIA</b></p>
+                        </div>
+                        <br>
+            <form method="POST" action="{{route('Proses.Register')}}">
+            	 {{ csrf_field() }}
+
+            	 		<div class="form-group">
+            	 		 <label for="inputEmail"><i class="fas fa-envelope"></i> Email:  </label>
+						<input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="inputEmail" name="email" placeholder="Masukan Email"  value="{{old('email')}}" required>
+					       @if ($errors->has('email'))
+					        <div class="invalid-feedback">  
+					            {{ $errors->first('email') }}
+					        </div>  
+					    @endif
+					
+
+						<label for="inputName"><i class="fas fa-user"></i> Username:  </label>
+    					<input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="inputName" name="name" placeholder="Masukan Username" value="{{old('name')}}" required autofocus>
+					    @if ($errors->has('name'))
+					        <div class="invalid-feedback">  
+					            {{ $errors->first('name') }}
+					        </div>  
+					    @endif
+					  </div>
+					<div class="form-group">
+				    <label for="inputPassword"><i class="fas fa-key"></i> Password:  </label>
+				    <input type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" id="inputPassword" name="password" placeholder="Masukan Password" required>
+				     @if ($errors->has('password'))
+				        <div class="invalid-feedback">  
+				            {{ $errors->first('password') }}
+				        </div>  
+				    @endif
+				  </div>
+
+
+					<div class="form-group">
+				    <label for="inputPassword"><i class="fas fa-key"></i> Confirm Password:  </label>
+				    <input type="Password" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" id="inputPassword" name="password_confirmation" placeholder="Konfirmasi Password" required>
+				     @if ($errors->has('password_confirmation'))
+				        <div class="invalid-feedback">  
+				            {{ $errors->first('password_confirmation') }}
+				        </div>  
+				    @endif
+				  </div>
+			
+						<div class="text-center">
+						<button type="submit" class="btn btn-primary">Register</button>
+					</div>
 				</div>
 			</form>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -21,11 +21,12 @@
                     <th scope="col">Nama Level</th>
                     <th scope="col">Action</th>
                 </tr>
+                @foreach($data_level as $dl)
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Admin</td>
+                    <th scope="row">{{$dl->id}}</th>
+                    <td>{{$dl->nama_level}}</td>
                     
                     <td class="d-flex justify-content-between">
                         <a href="{{route('Tambah.level')}}"><i class="fas fa-plus"></i></a>
@@ -34,17 +35,9 @@
                         <a href=""><i class="fas fa-minus"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Petugas</td>
-                        <td class="d-flex justify-content-between">
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <a href="#"><i class="fas fa-pen"></i></a>
-                        <a href=""><i class="fas fa-eye"></i></a>
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                    </td>
-                </tr>
+                
             </tbody>
+            @endforeach
         </table>
     </div>
 </body>
