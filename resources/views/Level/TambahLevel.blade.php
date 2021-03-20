@@ -23,18 +23,17 @@
                         <br>
                       
 				
-				 <form>
-					<div class="form-group">
-						<label for="id_rute">ID LEVEL</label>
-						<input type="id_rute" name="id_rute" class="form-control">
-					</div>
+				 <form action="{{route('Proses.Level')}}" method="POST">
+				 	@csrf
+					
 						<div class="form-group">
-						<label for="id_level">NAMA LEVEL</label>
-						<input type="id_level" name="id_level" class="form-control">
-						</div>
+						<label for="nama_level">Nama LEVEL</label>
+						@error('nama_level') <span style="color: red">{{$message}}</span>@enderror
+						<input type="nama_level" name="nama_level" id="nama_level" class="form-control">
+					</div>
 					<div>
 					<div class="text-center">
-						<button class="btn btn-primary">Tambah</button>
+						<button class="btn btn-primary" type="submit" id="btn">Tambah Level</button>
 				</form>
                     </div>
                 </div>

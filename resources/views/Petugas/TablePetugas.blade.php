@@ -25,47 +25,31 @@
                     <th scope="col">Action</th>
                 </tr>
             </thead>
+            @foreach($data_petugas as $dp )
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>admin</td>
-                    <td>xxxx</td>
-                    <td>aezakmi</td>
-                    <td>alicia</td>
+                    <th scope="row">{{$dp->id}}</th>
+                    <td>{{$dp->level_id}}</td>
+                    <td>{{$dp->username}}</td>
+                    <td>{{$dp->password}}</td>
+                    <td>{{$dp->nama_petugas}}</td>
                     <td class="d-flex justify-content-between">
                         <a href="{{route('Tambah.petugas')}}"><i class="fas fa-plus"></i></a>
-                        <a href="{{route('Edit.petugas')}}"><i class="fas fa-pen"></i></a>
-                        <a href="{{route('Detail.petugas')}}"><i class="fas fa-eye"></i></a>
-                        <a href=""><i class="fas fa-minus"></i></a>
+                        <a href="{{route('Edit.petugas',$dp->id)}}"><i class="fas fa-pen"></i></a>
+                        <a href="{{route('Detail.petugas',$dp->id)}}"><i class="fas fa-eye"></i></a>
+                        <form action="{{url('Petugas/'.$dp->id) }}" class="d-inline" method="post"
+              onsubmit="return confirm('APAKAH ANDA INGIN MENGHAPUS DATA')" >
+            @method('DELETE')
+            @csrf 
+            <button class="btn btn-white" >
+              <i class="fas fa-minus"></i>
+            </button>
+            </form>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                     <td>admin</td>
-                    <td>xxxx</td>
-                    <td>aezakmi</td>
-                    <td>alicia</td>
-                    <td class="d-flex justify-content-between">
-                        <a href="#"><i class="fas fa-eye"></i></a>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <a href="#"><i class="fas fa-pen"></i></a>
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                     <td>admin</td>
-                    <td>xxxx</td>
-                    <td>aezakmi</td>
-                    <td>alicia</td>
-                    <td class="d-flex justify-content-between">
-                        <a href="#"><i class="fas fa-eye"></i></a>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <a href="#"><i class="fas fa-pen"></i></a>
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                    </td>
-                </tr>
+                
             </tbody>
+            @endforeach
         </table>
     </div>
 </body>

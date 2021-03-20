@@ -23,35 +23,41 @@
                         <br>
                       
 				
-				<form>
+				<form method="POST" action="{{route('Proses.Transportasi')}}" >
+					{{csrf_field()}}
 					<div class="form-group">
-						<label for="id_rute">ID Transportasi</label>
-						<input type="id_rute" name="id_rute" class="form-control">
-					</div>
+					 	<label for="type_transportasi_id">Nama Type  :  </label>
+					 	 @error('student_class_id') <span style="color: red">{{$message}}</span>@enderror
+   					 	<select class="form-control" name="type_transportasi_id"  id="type_transportasi_id" required>
+     				 	<option >pilih</option>
+     				 	@foreach ($type_transportasi as $value)
+     				 	<option value="{{$value->id}}">{{$value->nama_type}}</option>
+						@endforeach
+    					</select>
+    				</div>
+ 					
 					<div>
 						<div class="form-group">
-						<label for="tujuan">KODE</label>
-						<input type="tujuan" name="tujuan" class="form-control">
+						<label for="kode_transportasi">kode</label>
+						 @error('kode_transportasi') <span style="color: red">{{$message}}</span>@enderror
+						<input type="text" name="kode_transportasi" id="kode_transportasi" class="form-control">
+						</div>
+					<div>
+					<div>
+						<div class="form-group">
+						<label for="jumlah_kursi">Jumlah Kursi</label>
+						 @error('jumlah_kursi') <span style="color: red">{{$message}}</span>@enderror
+						<input type="text" name="jumlah_kursi" id="jumlah_kursi" class="form-control">
 						</div>
 					<div>
 						<div class="form-group">
-						<label for="username">JUMLAH KURSI</label>
-						<input type="username" name="username" class="form-control">
+						<label for="keterangan">Keterangan</label>
+						 @error('keterangan') <span style="color: red">{{$message}}</span>@enderror
+						<input type="text" name="keterangan" id="keterangan" class="form-control">
 						</div>
-					<div>
-					<div>
-						<div class="form-group">
-						<label for="password">KETERANGAN</label>
-						<input type="password" name="password" class="form-control">
-						</div>
-					<div>
-						<div class="form-group">
-						<label for="id_level">ID TYPE TRANSPORTASI</label>
-						<input type="id_level" name="id_level" class="form-control">
-						</div>
-					<div>
+					
 					<div class="text-center">
-						<button class="btn btn-primary">Tambah</button>
+						<button class="btn btn-primary" type="submit">Tambah</button>
 				</form>
                     </div>
                 </div>

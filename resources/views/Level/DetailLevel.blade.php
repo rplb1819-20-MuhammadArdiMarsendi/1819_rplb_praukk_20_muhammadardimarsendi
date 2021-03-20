@@ -19,16 +19,15 @@
                     <div class="card-body">
                         <div class="text-center">
                             <p class="h4">Detail <b>Level</b></p>
-                        </div>
+                      
                         <br>
-                     <div class="text-center">
-        
-        
+      <div class="text-center">
+  
        <h6 class="text-info">ID LEVEL</h6>
-            <h3>1</h3>
+            <h3>{{ $detail_level->id}}</h3>
 
           <h6 class="text-info">NAMA LEVEL</h6>
-            <p>Ynto</p>
+            <p>{{ $detail_level->nama_level}}</p>
 
       </div>
                     </div>

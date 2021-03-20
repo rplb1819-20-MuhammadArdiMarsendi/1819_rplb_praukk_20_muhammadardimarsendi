@@ -23,56 +23,61 @@
                         <br>
                       
 				
-				<form>
+				<form action="{{route('ProsesTambah.rute')}}" method="POST">
+					@csrf
 					<div class="form-group">
-						<label for="id_rute">ID RUTE</label>
-						<input type="id_rute" name="id_rute" class="form-control">
-					</div>
-					<div>
+					 	<label for="transportasi_id">Nama transportasi  :  </label>
+					 	 @error('transportasi_id') <span style="color: red">{{$message}}</span>@enderror
+   					 	<select class="form-control" name="transportasi_id"  id="transportasi_id">
+     				 	<option >pilih</option>
+     				 	@foreach ($transportasi as $value)
+     				 	<option value="{{$value->id}}">{{$value->kode_transportasi}}</option>
+						@endforeach
+    					</select>
+    				</div>
 						<div class="form-group">
-						<label for="tujuan">TUJUAN</label>
-						<input type="tujuan" name="tujuan" class="form-control">
+						<label for="kota_awal">KOTA AWAL</label>
+						<input type="text" name="kota_awal" class="form-control">
 						</div>
 					<div>
-						<div class="form-group">
-						<label for="username">KOTA AWAL</label>
-						<input type="username" name="username" class="form-control">
-						</div>
-					<div>
 					<div>
 						<div class="form-group">
-						<label for="password">KOTA AKHIR</label>
-						<input type="password" name="password" class="form-control">
+						<label for="kota_akhir">KOTA AKHIR</label>
+						<input type="text" name="kota_akhir" class="form-control">
 						</div>
 					<div>
 						<div>
 						<div class="form-group">
-						<label for="username">RUTE AWAL</label>
-						<input type="username" name="username" class="form-control">
+						<label for="rute_awal">RUTE AWAL</label>
+						<input type="text" name="rute_awal" class="form-control">
 						</div>
 					<div>
 					<div>
 						<div class="form-group">
-						<label for="password">RUTE AKHIR</label>
-						<input type="password" name="password" class="form-control">
-						</div>
-					<div>
-					<div>
-						<div class="form-group">
-						<label for="namapenumpang">JUMLAH KURSI</label>
-						<input type="namapenumpang" name="namapenumpang" class="form-control">
+						<label for="rute_akhir">RUTE AKHIR</label>
+						<input type="text" name="rute_akhir" class="form-control">
 					</div>
-					<div>
-						<div class="form-group">
-						<label for="namapenumpang">HARGA</label>
-						<input type="namapenumpang" name="namapenumpang" class="form-control">
-					</div>
-					<div>
-						<div class="form-group">
-						<label for="id_level">ID LEVEL</label>
-						<input type="id_level" name="id_level" class="form-control">
+		
+					<div class="form-group">
+						<label for="jam_cekin">Jam cekin</label>
+						<input type="time" name="jam_cekin" class="form-control">
 						</div>
-					<div>
+						<div class="form-group">
+						<label for="jam_berangkat">Jam berangkat</label>
+						<input type="time" name="jam_berangkat" class="form-control">
+					</div>
+				    
+				
+						<div class="form-group">
+						<label for="tanggal_berangkat">Tanggal berangkat</label>
+						<input type="date" name="tanggal_berangkat" class="form-control">
+					</div>
+						<div class="form-group">
+						<label for="harga">HARGA</label>
+						<input type="text" name="harga" class="form-control">
+					</div>
+					
+					
 					<div class="text-center">
 						<button class="btn btn-primary">Tambah</button>
 				</form>

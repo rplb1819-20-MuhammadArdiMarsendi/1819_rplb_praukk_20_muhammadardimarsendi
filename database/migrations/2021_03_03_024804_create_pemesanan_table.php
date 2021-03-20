@@ -20,7 +20,7 @@ class CreatePemesananTable extends Migration
             $table->foreignId('penumpang_id')->constrained('penumpang');           
             $table->string('kode_pemesanan',10);
             $table->date('tanggal_pemesanan');
-            $table->string('tempat_pemesanan' );
+            $table->string('tempat_pemesanan');
             $table->integer('kode_kursi');
             $table->string('tujuan',255);
             $table->date('tanggal_berangkat');

@@ -21,21 +21,17 @@
                             <p class="h4">Edit <b>Type Transportasi</b></p>
                         </div>
                         <br>
-                      <form>
-					<div class="form-group">
-						<label for="id_type_transportasi">ID TYPE TRANSPORTASI</label>
-						<input type="id_type_transportasi" name="id_type_transportasi" class="form-control">
-					</div>
+                      <form action="{{route('ProsesEdit.type',$data_tipe->id)}}">
 						<div class="form-group">
 						<label for="nama_type">NAMA TYPE</label>
-						<input type="nama_type" name="nama_type" class="form-control">
+						<input type="text" name="nama_type" value="{{$data_tipe->nama_type}}" class="form-control">
 					</div>
 						<div class="form-group">
 						<label for="keterangan">KETERANGAN</label>
-						<input type="keterangan" name="keterangan" class="form-control">
+						<input type="text" name="keterangan" value="{{$data_tipe->keterangan}}" class="form-control">
 						</div>
 					<div>
-					<div>
+					<div class="text-center">
 						<button class="btn btn-primary">Edit</button>
 				</form>
                     </div>

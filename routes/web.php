@@ -35,45 +35,74 @@ Route::post('/User/ProsesRegister', 'UserController@ProsesRegister')->name('Pros
 //Petugas
 Route::get('/Petugas', 'PetugasController@Homepage')->name('Index.petugas');
 Route::get('/Petugas/TambahPetugas/','PetugasController@Create')->name('Tambah.petugas');
-Route::get('/Petugas/EditPetugas/','PetugasController@EditPetugas')->name('Edit.petugas');
-Route::get('/Petugas/DetailPetugas/','PetugasController@DetailPetugas')->name('Detail.petugas');
+Route::post('/Petugas/ProsesTambahPetugas/','PetugasController@store')->name('Proses.petugas');
+Route::get('/Petugas/EditPetugas/{id}','PetugasController@EditPetugas')->name('Edit.petugas');
+Route::patch('/Petugas/ProsesEditPetugas/{id}','PetugasController@Update')->name('ProsesEdit.petugas');
+Route::get('/Petugas/DetailPetugas/{id}','PetugasController@DetailPetugas')->name('Detail.petugas');
+Route::DELETE('/Petugas/{id}', 'PetugasController@Destroy');
+
 
 
 //RUTE
 Route::get('/Rute', 'RuteController@Homepage')->name('Index.rute');
 Route::get('/Rute/TambahRute', 'RuteController@TambahRute')->name('Tambah.rute');
-Route::get('/Rute/EditRute', 'RuteController@EditRute')->name('Edit.rute');
-Route::get('/Rute/DetailRute', 'RuteController@DetailRute')->name('Detail.rute');
+Route::post('/Rute/ProsesTambahRute', 'RuteController@store')->name('ProsesTambah.rute');
+Route::get('/Rute/EditRute/{id}', 'RuteController@EditRute')->name('Edit.rute');
+Route::patch('/Rute/EditRute/ProsesEditRute/{id}', 'RuteController@Update')->name('ProsesEdit.rute');
+Route::get('/Rute/DetailRute/{id}', 'RuteController@DetailRute')->name('Detail.rute');
+Route::DELETE('/Rute/{id}','RuteController@Destroy');
+
 
 //TRANSPORTASI
 Route::get('/Transportasi', 'TransportasiController@Homepage')->name('Index.transportasi');
-Route::get('/Transportasi/TambahTransportasi', 'TransportasiController@TambahTransportasi')->name('Tambah.transportasi');
-Route::get('/Transportasi/EditTransportasi', 'TransportasiController@EditTransportasi')->name('Edit.transportasi');
-Route::get('/Transportasi/DetailTransportasi/','TransportasiController@DetailTransportasi')->name('Detail.transportasi');
+Route::get('/Transportasi/TambahTransportasi/', 'TransportasiController@TambahTransportasi')->name('Tambah.transportasi');
+
+Route::post('/Transportasi/ProsesTambahTransportasi', 'TransportasiController@ProsesTambahTransportasi')->name('Proses.Transportasi');
+
+Route::get('/Transportasi/EditTransportasi/{id}', 'TransportasiController@EditTransportasi')->name('Edit.transportasi');
+
+Route::patch('/Transportasi/ProsesEditTransportasi/{id}', 'TransportasiController@update')->name('ProsesEdit.transportasi');
+
+Route::get('/Transportasi/DetailTransportasi/{id}','TransportasiController@DetailTransportasi')->name('Detail.transportasi');
+
+Route::DELETE('/Transportasi/{id}','TransportasiController@Destroy');
+
 
 //PENUMPANG
 Route::get('/Penumpang', 'PenumpangController@Homepage')->name('Index.penumpang');
 Route::get('/Penumpang/TambahPenumpang', 'PenumpangController@TambahPenumpang')->name('Tambah.penumpang');
-Route::get('/Penumpang/EditPenumpang', 'PenumpangController@EditPenumpang')->name('Edit.penumpang');
-Route::get('/Penumpang/DetailPenumpang', 'PenumpangController@DetailPenumpang')->name('Detail.penumpang');
+Route::post('/Penumpang/ProsesTambahPenumpang', 'PenumpangController@store')->name('ProsesTambah.penumpang');
+Route::get('/Penumpang/EditPenumpang/{id}', 'PenumpangController@EditPenumpang')->name('Edit.penumpang');
+Route::patch('/Penumpang/ProsesTambahPenumpang/{id}', 'PenumpangController@update')->name('ProsesEdit.penumpang');
+Route::get('/Penumpang/DetailPenumpang/{id}', 'PenumpangController@DetailPenumpang')->name('Detail.penumpang');
+Route::DELETE('/Penumpang/{id}','PenumpangController@Destroy');
+
 
 //LEVEL
 Route::get('/Level', 'LevelController@Homepage')->name('Index.level');
-Route::get('/Level/TambahLevel', 'LevelController@TambahLevel')->name('Tambah.level');
-Route::post('/Level/Prosestambahlevel','LevelController@ProsesTambahLevel')->name('proses.tambah');
-Route::get('/Level/EditLevel', 'LevelController@EditLevel')->name('Edit.level');
-Route::get('/Level/DetailLevel', 'LevelController@DetailLevel')->name('Detail.level');
+Route::get('/Level/TambahLevel/', 'LevelController@TambahLevel')->name('Tambah.level');
+Route::post('/Level/ProsestambahLevel/','LevelController@ProsesTambahLevel')->name('Proses.Level');
+Route::get('/Level/EditLevel/{id}', 'LevelController@EditLevel')->name('Edit.level');
+Route::get('/Level/ProsesEditLevel/{id}', 'LevelController@update')->name('ProsesEdit.level');
+Route::get('/Level/DetailLevel/{id}', 'LevelController@DetailLevel')->name('Detail.level');
+Route::DELETE('/Level/{id}', 'LevelController@Destroy');
+
+
 
 
 //type TRANSPORTASI
 Route::get('/TypeTransportasi', 'TypeTransportasiController@Homepage')->name('Index.type');
-Route::get('/TypeTransportasi/TambahTypeTransportasi', 'TypeTransportasiController@TambahTypeTransportasi')->name('Tambah.type');
+Route::get('/TypeTransportasi/TambahTypeTransportasi/', 'TypeTransportasiController@TambahTypeTransportasi')->name('Tambah.type');
 
-Route::get('/TypeTransportasi/EditTypeTransportasi', 'TypeTransportasiController@EditTypeTransportasi')->name('Edit.type');
-
-Route::get('/TypeTransportasi/DetailTypeTransportasi', 'TypeTransportasiController@DetailTypeTransportasi')->name('Detail.type');
+Route::post('/TypeTransportasi/ProsesTambahTypeTransportasi/', 'TypeTransportasiController@store')->name('Proses.type');
 
 
+Route::get('/TypeTransportasi/EditTypeTransportasi/{id}', 'TypeTransportasiController@EditTypeTransportasi')->name('Edit.type');
+
+Route::get('/TypeTransportasi/ProsesEditTypeTransportasi/{id}', 'TypeTransportasiController@update')->name('ProsesEdit.type');
+
+Route::get('/TypeTransportasi/DetailTypeTransportasi/{id}', 'TypeTransportasiController@DetailTypeTransportasi')->name('Detail.type');
+Route::DELETE('/TypeTransportasi/{id}','TypeTransportasiController@Hapus');
 
 
 

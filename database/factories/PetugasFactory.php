@@ -9,7 +9,10 @@ use Illuminate\Support\Str;
 $factory->define(App\Model\Petugas\Petugas::class, function (Faker $faker) {
     $word = $faker->word;
     return [
-        
+        'level_id'->function()
+        {
+            return Petugas::all()->random();
+        },
         'username'=>$word,
         'password'=>encrypt('password'), // password
         'nama_petugas'=>$faker->name,

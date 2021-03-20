@@ -1,15 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Model\Petugas\Petugas;
+use App\Model\Level\Level;
+
 
 class PetugasController extends Controller
 {
   
     public function Homepage()
     {
-       return view('Petugas/TablePetugas');  
+       $data_petugas = Petugas::all();
+       return view('Petugas/TablePetugas',compact('data_petugas'));  
     }
 
     /**
@@ -19,7 +23,11 @@ class PetugasController extends Controller
      */
     public function create()
     {
-        return view('Petugas/TambahPetugas');
+        $data = [
+            'petugas' => Petugas::all(),
+            'level_id' => Level::all()
+        ];
+        return view('Petugas/TambahPetugas',$data);
     }
 
     /**
@@ -30,8 +38,19 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+            Petugas::create([
+            
+            'level_id'=>$request->level_id,
+            'username'=>$request->username,
+            'password'=>$request->password,
+            'nama_petugas'=>$request->nama_petugas
+
+
+        ]);
+        //JIKA BENAR MAKA KEMBALI KE INDEX SISWA
+        return redirect(route('Index.petugas'));
+        
+}
 
     /**
      * Display the specified resource.
@@ -39,9 +58,10 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function DetailPetugas()
+    public function DetailPetugas($id)
     {
-        return view('Petugas/DetailPetugas');  
+        $petugas = Petugas::find($id);
+        return view('Petugas/DetailPetugas',compact('petugas'));  
    
     }
 
@@ -51,10 +71,10 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function EditPetugas()
+    public function EditPetugas($id)
     {
-        
-             return view('Petugas/EditPetugas');  
+            $petugas = Petugas::find($id);
+             return view('Petugas/EditPetugas',compact('petugas'));  
    
     }
 
@@ -67,9 +87,32 @@ class PetugasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         //VALIDASI
+         $validator = Validator::make( $request->all(), [
+            
+            'level_id'=> 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'nama_petugas' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect('/Petugas')->withErrors($validator)->withInput();
+        } else {
+        // $request->validate([
+        //     'nominal' => 'required|max:6'
+        // ]);
+        // return redirect('/spp')->withErrors($request, 'nominal');
+        
+        
+        $petugas = Petugas::find($id);
+        $petugas->level_id  = $request->level_id; 
+        $petugas->username  = $request->username;
+        $petugas->password = $request->password;
+        $petugas->nama_petugas  = $request->nama_petugas;
+        $petugas->update();
+        return redirect(route('Index.petugas'));
     }
-
+}
     /**
      * Remove the specified resource from storage.
      *
@@ -78,6 +121,9 @@ class PetugasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Petugas::find($id);
+        $data->delete();
+        
+        return redirect(route('Index.petugas'));
     }
 }

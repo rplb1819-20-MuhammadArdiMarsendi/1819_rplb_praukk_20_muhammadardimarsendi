@@ -25,31 +25,35 @@
         
         
        <h6 class="text-info">ID Penumpang</h6>
-            <h3>1</h3>
+            <h3>{{$data_penumpang->id}}</h3>
+
+        <h6 class="text-info">ID Route</h6>
+            <h3>{{$data_penumpang->route_id}}</h3>
 
           <h6 class="text-info">USERNAME</h6>
-            <p>Ynto</p>
+            <p>{{$data_penumpang->username}}</p>
 
              <h6 class="text-info">PASSWORD</h6>
-            <p>j2oi3h2ihf2</p>
+            <p>{{$data_penumpang->password}}</p>
 
              <h6 class="text-info">NAMA PENUMPANG</h6>
-            <p>YANTI</p>
+            <p>{{$data_penumpang->nama_penumpang}}</p>
 
              <h6 class="text-info">ALAMAT PENUMAPNG</h6>
-            <p>2</p>
+            <p>{{$data_penumpang->alamat_penumpang}}</p>
 
              <h6 class="text-info">TANGGAL LAHIR</h6>
-            <p>2</p>
+            <p>{{$data_penumpang->tanggal_lahir}}</p>
 
              <h6 class="text-info">JENIS KELAMIN</h6>
-            <p>PRIA</p>
+            <p>{{$data_penumpang->jenis_kelamin}}</p>
 
             <h6 class="text-info">TELEPHONE</h6>
-            <p>2</p>
+            <p>{{$data_penumpang->telephone}}</p>
       </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

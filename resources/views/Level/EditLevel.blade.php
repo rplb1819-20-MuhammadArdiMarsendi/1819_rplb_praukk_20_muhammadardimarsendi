@@ -23,14 +23,10 @@
                         <br>
                       
 				
-				 <form>
-					<div class="form-group">
-						<label for="id_rute">ID LEVEL</label>
-						<input type="id_rute" name="id_rute" class="form-control">
-					</div>
-						<div class="form-group">
-						<label for="id_level">NAMA LEVEL</label>
-						<input type="id_level" name="id_level" class="form-control">
+				 <form action="{{route('ProsesEdit.level',$data_level->id)}}">
+				<div class="form-group">
+						<label for="nama_level">NAMA LEVEL</label>
+						<input type="text" name="nama_level" value="{{$data_level->nama_level}}" class="form-control">
 						</div>
 					<div>
 					<div class="text-center">

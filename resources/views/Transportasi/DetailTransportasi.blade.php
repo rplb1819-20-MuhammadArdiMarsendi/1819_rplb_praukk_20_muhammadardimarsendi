@@ -24,19 +24,21 @@
                      <div class="text-center">
         
         <h6 class="text-info">ID TRANSPORTASI</h6>
-            <h3>1</h3>
+            <h3>{{$data_transportasi->id}}</h3>
 
-          <h6 class="text-info">KODE</h6>
-            <p>Ynto</p>
+          <h6 class="text-info">Nama type</h6>
+            <p>{{$data_transportasi->type_transportasi_id}}</p>
+
+               <h6 class="text-info">kode</h6>
+            <p>{{$data_transportasi->kode_transportasi}}</p>
 
              <h6 class="text-info">JUMLAH KURSI</h6>
-            <p>j2oi3h2ihf2</p>
+            <p>{{$data_transportasi->jumlah_kursi}}</p>
 
              <h6 class="text-info">KETERANGAN</h6>
-            <p>YANTI</p>
+            <p>{{$data_transportasi->keterangan}}</p>
 
-             <h6 class="text-info">ID TYPE TRANSPORTASI</h6>
-            <p>2</p>
+            
       </div>
                     </div>
                 </div>

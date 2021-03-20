@@ -22,35 +22,32 @@
                     <th scope="col">Keterangan</th>
                     <th scope="col">Action</th>
                 </tr>
+                 @foreach($dtp as $dt)
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Pesawat</td>
-                    <td>Lorem ipsum dolor sit amet, 
-                    consectetur adipisicing elit, sed do eiusmod
+                    <th scope="row">{{$dt->id}}</th>
+                    <td>{{$dt->nama_type}}</td>
+                    <td>{{$dt->keterangan}}
                     </td>
                     <td class="d-flex justify-content-between">
                         <a href="{{route('Tambah.type')}}"><i class="fas fa-plus"></i></a>
-                        <a href="{{route('Edit.type')}}"><i class="fas fa-pen"></i></a>
-                        <a href="{{route('Detail.type')}}"><i class="fas fa-eye"></i></a>
-                        <a href=""><i class="fas fa-minus"></i></a>
+                        <a href="{{route('Edit.type',$dt->id)}}"><i class="fas fa-pen"></i></a>
+                        <a href="{{route('Detail.type',$dt->id)}}"><i class="fas fa-eye"></i></a>
+                        <form action="{{url('TypeTransportasi/'.$dt->id) }}" class="d-inline" method="post"
+              onsubmit="return confirm('APAKAH ANDA INGIN MENGHAPUS DATA')"style="outline-color:none;" >
+            @method('DELETE')
+            @csrf 
+            <button class="btn btn-white" >
+              <i class="fas fa-minus"></i>
+            </button>
+            </form>
+                       
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Kereta</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    
-                    </td>
-                    <td class="d-flex justify-content-between">
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <a href="#"><i class="fas fa-pen"></i></a>
-                        <a href=""><i class="fas fa-eye"></i></a>
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                    </td>
-                </tr>
+                
             </tbody>
+            @endforeach
         </table>
     </div>
 </body>

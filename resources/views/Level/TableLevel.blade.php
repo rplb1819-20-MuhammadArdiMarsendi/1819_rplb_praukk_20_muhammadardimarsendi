@@ -30,9 +30,16 @@
                     
                     <td class="d-flex justify-content-between">
                         <a href="{{route('Tambah.level')}}"><i class="fas fa-plus"></i></a>
-                        <a href="{{route('Edit.level')}}"><i class="fas fa-pen"></i></a>
-                        <a href="{{route('Detail.level')}}"><i class="fas fa-eye"></i></a>
-                        <a href=""><i class="fas fa-minus"></i></a>
+                        <a href="{{route('Edit.level',$dl->id)}}"><i class="fas fa-pen"></i></a>
+                        <a href="{{route('Detail.level',$dl->id)}}"><i class="fas fa-eye"></i></a>
+                         <form action="{{url('Level/'.$dl->id) }}" class="d-inline" method="post"
+              onsubmit="return confirm('APAKAH ANDA INGIN MENGHAPUS DATA')" >
+            @method('DELETE')
+            @csrf 
+            <button class="btn btn-white" >
+              <i class="fas fa-minus"></i>
+            </button>
+            </form>
                     </td>
                 </tr>
                 

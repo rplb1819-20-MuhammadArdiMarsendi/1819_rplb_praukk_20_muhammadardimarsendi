@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Model\Penumpang\Penumpang;
+use App\Model\Route\Route;
+
 
 class PenumpangController extends Controller
 {
@@ -13,7 +17,8 @@ class PenumpangController extends Controller
      */
     public function Homepage()
     {
-       return view("Penumpang/TablePenumpang");
+      $data_penumpang = Penumpang::all();
+       return view("Penumpang/TablePenumpang",compact('data_penumpang'));
     }
 
     /**
@@ -23,7 +28,12 @@ class PenumpangController extends Controller
      */
     public function TambahPenumpang()
     {
-        return view("Penumpang/TambahPenumpang");
+        $data = [
+            'rute_id' => Route::all(),
+            'penumpang' => Penumpang::all()
+        ];
+
+        return view("Penumpang/TambahPenumpang",$data);
     }
 
     /**
@@ -34,7 +44,21 @@ class PenumpangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         Penumpang::create([
+            
+            'route_id'=>$request->route_id,
+            'username'=>$request->username,
+            'password'=>$request->password,
+            'nama_penumpang'=>$request->nama_penumpang,
+            'alamat_penumpang'=>$request->alamat_penumpang,
+            'tanggal_lahir'=>$request->tanggal_lahir,
+            'jenis_kelamin'=>$request->jenis_kelamin,
+            'telephone'=>$request->telephone
+
+        ]);
+       
+        return redirect('/Penumpang')->with('berhasil dihapus');
+        
     }
 
     /**
@@ -43,9 +67,10 @@ class PenumpangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function DetailPenumpang()
+    public function DetailPenumpang($id)
     {
-        return view ("Penumpang/DetailPenumpang");
+        $data_penumpang = Penumpang::find($id);
+        return view ("Penumpang/DetailPenumpang",compact('data_penumpang'));
     }
 
     /**
@@ -54,9 +79,13 @@ class PenumpangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function EditPenumpang()
+    public function EditPenumpang($id)
     {
-        return view("Penumpang/EditPenumpang");
+        $data = [
+            'rute' => Route::all(),
+            'penumpang' => Penumpang::find($id)
+        ];
+        return view("Penumpang/EditPenumpang",$data);
         
     }
 
@@ -69,7 +98,38 @@ class PenumpangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $validator = Validator::make( $request->all(), [
+            
+            'route_id'=>'required',
+            'username'=>'required',
+            'password'=>'required',
+            'nama_penumpang'=>'required',
+            'alamat_penumpang'=>'required',
+            'tanggal_lahir'=>'required',
+            'jenis_kelamin'=>'required',
+            'telephone'=>'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect('/Penumpang')->withErrors($validator)->withInput();
+        } else {
+        // $request->validate([
+        //     'nominal' => 'required|max:6'
+        // ]);
+        // return redirect('/spp')->withErrors($request, 'nominal');
+        
+        
+        $penumpang = Penumpang::find($id);
+        $penumpang->route_id  = $request->route_id; 
+        $penumpang->username  = $request->username;
+        $penumpang->password = $request->password;
+        $penumpang->nama_penumpang  = $request->nama_penumpang;
+        $penumpang->alamat_penumpang  = $request->alamat_penumpang;
+        $penumpang->tanggal_lahir  = $request->tanggal_lahir;
+        $penumpang->jenis_kelamin  = $request->jenis_kelamin;
+        $penumpang->telephone  = $request->telephone;
+        $penumpang->update();
+        return redirect(route('Index.penumpang'));
+    }
     }
 
     /**
@@ -80,6 +140,9 @@ class PenumpangController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $data = Penumpang::find($id);
+        $data->delete();
+        
+        return redirect(route('Index.penumpang'));
     }
 }

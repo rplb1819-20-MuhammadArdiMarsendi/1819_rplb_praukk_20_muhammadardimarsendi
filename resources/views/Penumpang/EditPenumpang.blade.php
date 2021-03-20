@@ -23,50 +23,62 @@
                         <br>
                       
 				
-				<form>
+				<form action="{{route('ProsesEdit.penumpang',$penumpang->id)}}" method="POST">
+			     @method('patch')
+			      @csrf
 					<div class="form-group">
-						<label for="id_rute">ID PENUMPANG</label>
-						<input type="id_rute" name="id_rute" class="form-control">
+					 	<label for="route_id">id rute  :  </label>
+					 	<!--  @error('transportasi_id') <span style="color: red">{{$message}}</span>@enderror -->
+   					 	<select class="form-control" name="route_id"  id="route_id">
+     				 	<option >pilih</option>
+     				 	@foreach ($rute as $value)
+     				 	<option value="{{$value->id}}">{{$value->id}}</option>
+						@endforeach
+    					</select>
+    				</div>
+					<div>
+						<div class="form-group">
+						<label for="username">USERNAME</label>
+						<input type="username" name="username" class="form-control" value="{{$penumpang->username}}">
+						</div>
+					<div>
+						<div class="form-group">
+						<label for="password">PASSWORD</label>
+						<input type="password" name="password" class="form-control"  value="{{$penumpang->password}}">
+						</div>
+					<div>
+					<div>
+						<div class="form-group">
+						<label for="nama_penumpang">NAMA PENUMPANG</label>
+						<input type="text" name="nama_penumpang" class="form-control"  value="{{$penumpang->nama_penumpang}}">
+						</div>
+					<div>
+					<div>
+						<div class="form-group">
+						<label for="alamat_penumpang">ALAMAT PENUMPANG</label>
+						<input type="text" name="alamat_penumpang" class="form-control"  value="{{$penumpang->alamat_penumpang}}">
 					</div>
 					<div>
 						<div class="form-group">
-						<label for="tujuan">USERNAME</label>
-						<input type="tujuan" name="tujuan" class="form-control">
-						</div>
-					<div>
-						<div class="form-group">
-						<label for="username">PASSWORD</label>
-						<input type="username" name="username" class="form-control">
-						</div>
-					<div>
-					<div>
-						<div class="form-group">
-						<label for="password">NAMA PENUMPANG</label>
-						<input type="password" name="password" class="form-control">
-						</div>
-					<div>
-					<div>
-						<div class="form-group">
-						<label for="namapenumpang">ALAMAT PENUMPANG</label>
-						<input type="namapenumpang" name="namapenumpang" class="form-control">
+						<label for="tanggal_lahir">TANGGAL LAHIR</label>
+						<input type="date" name="tanggal_lahir" class="form-control" value="{{$penumpang->tanggal_lahir}}">
 					</div>
-					<div>
-						<div class="form-group">
-						<label for="namapenumpang">TANGGAL LAHIR</label>
-						<input type="date" name="namapenumpang" class="form-control">
+
+				<div class="form-group">
+					 	<label for="jenis_kelamin">Jenis Kelamin  :  </label>
+					 	<!--  @error('transportasi_id') <span style="color: red">{{$message}}</span>@enderror -->
+   					 	<select class="form-control" name="jenis_kelamin"  id="jenis_kelamin"  value="{{$penumpang->jenis_kelamin}}">
+     				 	<option >pilih</option>
+     				 	<option value="laki-laki">Laki-Laki</option>
+     				 	<option value="perempuan">Perempuan</option>
+    					</select>
+    				</div>
+
+					<div class="form-group">
+						<label for="telephone">TELEPHONE</label>
+						<input type="number" name="telephone" class="form-control"  value="{{$penumpang->telephone}}">
 					</div>
-					<div>
-						<div class="form-group">
-						<label for="id_level">JENIS KELAMIN</label>
-						<input type="id_level" name="id_level" class="form-control">
-						</div>
-					<div>
-					<div>
-						<div class="form-group">
-						<label for="id_level">TELEPHONE</label>
-						<input type="id_level" name="id_level" class="form-control">
-						</div>
-					<div>
+			
 					<div class="text-center">
 						<button class="btn btn-primary">Edit</button>
 				</form>

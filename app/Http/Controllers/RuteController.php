@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
+use App\Model\Route\Route;
+use App\Model\Transportasi\Transportasi;
 use Illuminate\Http\Request;
 
 class RuteController extends Controller
@@ -13,7 +15,8 @@ class RuteController extends Controller
      */
     public function Homepage()
     {
-        return view("Rute/TableRute");
+        $data_rute = Route::all();
+        return view("Rute/TableRute",compact('data_rute'));
     }
 
     /**
@@ -23,7 +26,11 @@ class RuteController extends Controller
      */
     public function TambahRute()
     {
-       return view("Rute/TambahRute");
+        $data = [
+        'rute'=> Route::all(),
+        'transportasi'=> Transportasi::all()    
+        ];
+       return view("Rute/TambahRute",$data);
     }
 
     /**
@@ -34,7 +41,23 @@ class RuteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Route::create([
+            
+            'transportasi_id'=>$request->transportasi_id,
+            'kota_awal'=>$request->kota_awal,
+            'kota_akhir'=>$request->kota_akhir,
+            'rute_awal'=>$request->rute_awal,
+            'rute_akhir'=>$request->rute_akhir,
+            'jam_cekin'=>$request->jam_cekin,
+            'jam_berangkat'=>$request->jam_berangkat,
+            'tanggal_berangkat'=>$request->tanggal_berangkat,
+            'harga'=>$request->harga
+
+
+        ]);
+       
+        return redirect('/Rute')->with('berhasil dihapus');
+        
     }
 
     /**
@@ -43,9 +66,10 @@ class RuteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function DetailRute()
+    public function DetailRute($id)
     {
-        return view ("Rute/DetailRute");
+        $data_rute = Route::find($id);
+        return view ("Rute/DetailRute",compact('data_rute'));
     }
 
     /**
@@ -54,9 +78,14 @@ class RuteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function EditRute()
+    public function EditRute($id)
     {
-        return view("Rute/EditRute");
+         $data = [
+        'rute'=> Route::find($id),
+        'transportasi'=> Transportasi::all()    
+        ];
+        
+        return view("Rute/EditRute",$data);
     }
 
     /**
@@ -68,8 +97,41 @@ class RuteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $validator = Validator::make( $request->all(), [
+            
+            'transportasi_id'=>'required',
+            'kota_awal'=>'required',
+            'kota_akhir'=>'required',
+            'rute_awal'=>'required',
+            'rute_akhir'=>'required',
+            'jam_cekin'=>'required',
+            'jam_berangkat'=>'required',
+            'tanggal_berangkat'=>'required',
+            'harga'=>'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect('/Rute')->withErrors($validator)->withInput();
+        } else {
+        // $request->validate([
+        //     'nominal' => 'required|max:6'
+        // ]);
+        // return redirect('/spp')->withErrors($request, 'nominal');
+        
+        
+        $rute = Route::find($id);
+        $rute->transportasi_id  = $request->transportasi_id; 
+        $rute->kota_awal  = $request->kota_awal;
+        $rute->kota_akhir = $request->kota_akhir;
+        $rute->rute_awal  = $request->rute_awal;
+        $rute->rute_akhir  = $request->rute_akhir;
+        $rute->jam_cekin  = $request->jam_cekin;
+        $rute->jam_berangkat  = $request->jam_berangkat;
+        $rute->tanggal_berangkat  = $request->tanggal_berangkat;
+        $rute->harga  = $request->harga;
+        $rute->update();
+        return redirect(route('Index.rute'));
     }
+ }
 
     /**
      * Remove the specified resource from storage.
@@ -79,6 +141,9 @@ class RuteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Route::find($id);
+        $data->delete();
+        
+        return redirect(route('Index.rute'));
     }
 }

@@ -25,19 +25,19 @@
         
         
         <h6 class="text-info">ID PETUGAS</h6>
-            <h3>1</h3>
+            <h3>{{$petugas->id}}</h3>
 
           <h6 class="text-info">Username</h6>
-            <p>Ynto</p>
+            <p>{{$petugas->username}}</p>
 
              <h6 class="text-info">Password</h6>
-            <p>j2oi3h2ihf2</p>
+            <p>{{$petugas->password}}</p>
 
              <h6 class="text-info">Nama Petugas</h6>
-            <p>YANTI</p>
+            <p>{{$petugas->nama_petugas}}</p>
 
              <h6 class="text-info">ID Level</h6>
-            <p>2</p>
+            <p>{{$petugas->level_id}}</p>
       </div>
                     </div>
                 </div>

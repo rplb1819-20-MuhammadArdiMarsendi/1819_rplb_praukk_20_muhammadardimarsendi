@@ -23,33 +23,32 @@
                         <br>
                      <div class="text-center">
         
-        <h6 class="text-info">ID RUTE</h6>
-            <h3>1</h3>
-
-          <h6 class="text-info">TUJUAN</h6>
-            <p>Ynto</p>
+            <h6 class="text-info">ID RUTE</h6>
+            <h3 class="text-danger">{{$data_rute->id}}</h3>
 
              <h6 class="text-info">KOTA AWAL</h6>
-            <p>j2oi3h2ihf2</p>
+            <p>{{$data_rute->kota_awal}}</p>
 
              <h6 class="text-info">KOTA AKHIR</h6>
-            <p>YANTI</p>
-
+            <p>{{$data_rute->kota_akhir}}</p>
 
              <h6 class="text-info">RUTE AWAL</h6>
-            <p>j2oi3h2ihf2</p>
+            <p>{{$data_rute->rute_awal}}</p>
 
              <h6 class="text-info">RUTE AKHIR</h6>
-            <p>YANTI</p>
+            <p>{{$data_rute->rute_akhir}}</p>
 
-             <h6 class="text-info">JUMLAH KURSI</h6>
-            <p>2</p>
+             <h6 class="text-info">JAM CEKIN</h6>
+            <p>{{$data_rute->jam_cekin}}</p>
+
+            <h6 class="text-info">JAM BERANGKAT</h6>
+            <p>{{$data_rute->jam_berangkat}}</p>
 
              <h6 class="text-info">HARGA</h6>
-            <p>2</p>
+            <p>{{$data_rute->harga}}</p>
 
              <h6 class="text-info">ID TRANSPORTASI</h6>
-            <p>2</p>
+            <h3 class="text-danger">{{$data_rute->transportasi_id}}</h3>
       </div>
                     </div>
                 </div>

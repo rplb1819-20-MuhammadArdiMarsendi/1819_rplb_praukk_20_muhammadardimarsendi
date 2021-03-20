@@ -23,11 +23,18 @@
                         <br>
                       
 				
-				<form>
+				<form action="{{route('Proses.petugas')}}" method="POST">
+					{{csrf_field()}}
 					<div class="form-group">
-						<label for="email">ID PETUGAS</label>
-						<input type="email" name="email" class="form-control">
-					</div>
+					 	<label for="level_id">Nama Level  :  </label>
+					 	 @error('level_id') <span style="color: red">{{$message}}</span>@enderror
+   					 	<select class="form-control" name="level_id"  id="level_id">
+     				 	<option >pilih</option>
+     				 	@foreach ($level_id as $value)
+     				 	<option value="{{$value->id}}">{{$value->nama_level}}</option>
+						@endforeach
+    					</select>
+    				</div>
 					<div>
 						<div class="form-group">
 						<label for="username">Username</label>
@@ -42,17 +49,13 @@
 					<div>
 					<div>
 						<div class="form-group">
-						<label for="namapenumpang">Nama Petugas</label>
-						<input type="namapenumpang" name="namapenumpang" class="form-control">
+						<label for="nama_petugas">Nama Petugas</label>
+						<input type="nama_petugas" name="nama_petugas" class="form-control">
 					</div>
-					<div>
-						<div class="form-group">
-						<label for="id_level">ID LEVEL</label>
-						<input type="id_level" name="id_level" class="form-control">
-						</div>
+					
 					<div>
 					<div class="text-center">
-						<button class="btn btn-primary">Tambah</button>
+						<button type="submit" class="btn btn-primary" >Tambah</button>
 				</form>
                     </div>
                 </div>

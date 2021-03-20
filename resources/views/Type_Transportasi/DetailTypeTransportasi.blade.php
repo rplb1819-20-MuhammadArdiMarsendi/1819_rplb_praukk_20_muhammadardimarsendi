@@ -21,23 +21,23 @@
                             <p class="h4">Detail <b>Type Transportasi</b></p>
                         </div>
                         <br>
-                     <div class="text-center">
-        
+       <div class="text-center mt-5"> 
         <h6 class="text-info">ID TYPE TRANSPORTASI</h6>
-            <h3>1</h3>
-
+            <h3>{{$dtp->id}}</h3>
           <h6 class="text-info">NAMA TYPE</h6>
-            <p>Ynto</p>
+            <p>{{$dtp->nama_type}}</p>
 
             <h6 class="text-info">KETERANGAN</h6>
-            <p>Ynto</p>
+            <p>{{$dtp->keterangan}}</p>
 
       </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+  </div>
 </body>
 
 </html>

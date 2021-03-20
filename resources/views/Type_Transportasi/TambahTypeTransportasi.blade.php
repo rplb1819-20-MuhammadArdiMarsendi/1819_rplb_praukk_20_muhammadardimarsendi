@@ -21,22 +21,19 @@
                             <p class="h4">Tambah <b>Type Transportasi</b></p>
                         </div>
                         <br>
-                        <form>
+                        <form action="{{route('Proses.type')}}" method="post">
+					@csrf
 					<div class="form-group">
-						<label for="id_rute">ID TYPE TRANSPORTASI</label>
-						<input type="id_rute" name="id_rute" class="form-control">
+						<label for="nama_type">NAMA TYPE</label>
+						<input type="nama_type" name="nama_type" class="form-control">
 					</div>
 						<div class="form-group">
-						<label for="id_level">NAMA TYPE</label>
-						<input type="id_level" name="id_level" class="form-control">
-					</div>
-						<div class="form-group">
-						<label for="id_level">KETERANGAN</label>
-						<input type="id_level" name="id_level" class="form-control">
+						<label for="keterangan">KETERANGAN</label>
+						<input type="keterangan" name="keterangan" class="form-control">
 						</div>
 					<div>
-					<div>
-						<button class="btn btn-primary">Tambah</button>
+					<div class="text-center">
+						<button type="submit" class="btn btn-primary">Tambah</button>
 				</form>
                     </div>
                 </div>

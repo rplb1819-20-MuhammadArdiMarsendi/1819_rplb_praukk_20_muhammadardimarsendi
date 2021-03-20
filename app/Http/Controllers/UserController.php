@@ -21,7 +21,6 @@ class UserController extends Controller
             }
             return redirect('/')->with('message',"username atau password salah");
              }
-
                 //
                 public function Register()
                 {

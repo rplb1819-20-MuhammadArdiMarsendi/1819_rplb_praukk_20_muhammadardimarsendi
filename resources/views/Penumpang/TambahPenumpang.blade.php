@@ -23,50 +23,61 @@
                         <br>
                       
 				
-				<form>
-					<div class="form-group">
-						<label for="id_rute">ID PENUMPANG</label>
-						<input type="id_rute" name="id_rute" class="form-control">
-					</div>
+				<form action="{{route('ProsesTambah.penumpang')}}" method="POST">
+					@csrf
+				<div class="form-group">
+					 	<label for="route_id">Id rute  :  </label>
+					 	 <!-- @error('level_id') <span style="color: red">{{$message}}</span>@enderror -->
+   					 	<select class="form-control" name="route_id"  id="route_id">
+     				 	<option >pilih</option>
+     				 	@foreach ($rute_id as $value)
+     				 	<option value="{{$value->id}}">{{$value->id}}</option>
+						@endforeach
+    					</select>
+    				</div>
 					<div>
 						<div class="form-group">
-						<label for="tujuan">USERNAME</label>
-						<input type="tujuan" name="tujuan" class="form-control">
-						</div>
-					<div>
-						<div class="form-group">
-						<label for="username">PASSWORD</label>
+						<label for="username">USERNAME</label>
 						<input type="username" name="username" class="form-control">
 						</div>
 					<div>
-					<div>
 						<div class="form-group">
-						<label for="password">NAMA PENUMPANG</label>
+						<label for="password">PASSWORD</label>
 						<input type="password" name="password" class="form-control">
 						</div>
 					<div>
 					<div>
 						<div class="form-group">
-						<label for="namapenumpang">ALAMAT PENUMPANG</label>
-						<input type="namapenumpang" name="namapenumpang" class="form-control">
-					</div>
-					<div>
-						<div class="form-group">
-						<label for="namapenumpang">TANGGAL LAHIR</label>
-						<input type="date" name="namapenumpang" class="form-control">
-					</div>
-					<div>
-						<div class="form-group">
-						<label for="id_level">JENIS KELAMIN</label>
-						<input type="id_level" name="id_level" class="form-control">
+						<label for="nama_penumpang">NAMA PENUMPANG</label>
+						<input type="text" name="nama_penumpang" class="form-control">
 						</div>
 					<div>
 					<div>
 						<div class="form-group">
-						<label for="id_level">TELEPHONE</label>
-						<input type="id_level" name="id_level" class="form-control">
-						</div>
+						<label for="alamat_penumpang">ALAMAT PENUMPANG</label>
+						<input type="text" name="alamat_penumpang" class="form-control">
+					</div>
 					<div>
+						<div class="form-group">
+						<label for="tanggal_lahir">TANGGAL LAHIR</label>
+						<input type="date" name="tanggal_lahir" class="form-control">
+					</div>
+
+				<div class="form-group">
+					 	<label for="jenis_kelamin">Jenis Kelamin  :  </label>
+					 	<!--  @error('transportasi_id') <span style="color: red">{{$message}}</span>@enderror -->
+   					 	<select class="form-control" name="jenis_kelamin"  id="jenis_kelamin">
+     				 	<option >pilih</option>
+     				 	<option value="laki-laki">Laki-Laki</option>
+     				 	<option value="perempuan">Perempuan</option>
+    					</select>
+    				</div>
+
+					<div class="form-group">
+						<label for="telephone">TELEPHONE</label>
+						<input type="number" name="telephone" class="form-control">
+					</div>
+			
 					<div class="text-center">
 						<button class="btn btn-primary">Tambah</button>
 				</form>

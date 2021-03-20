@@ -15,69 +15,46 @@
 
     <div class="container">
         <table class="table">
-            <thead>
+          <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">username</th>
-                    <th scope="col">password</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">Tanggal Lahir</th>
-                    <th scope="col">Kelamin</th>
-                    <th scope="col">Telepon</th>
+                    <th scope="col">Username</th>
+                   <!--  <th scope="col">Password</th> -->
+                    <th scope="col">Nama Penumpang</th>
+                    <th scope="col">Alamat Penumpang</th>
+                    <!-- <th scope="col">Tanggal Lahir</th> -->
+                    <!-- <th scope="col">Jenis Kelamin</th> -->
+                    <th scope="col">Telephone</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <thead>
+              @foreach($data_penumpang as $dp)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>santuyyy</td>
-                    <td>uehcfui4rehjep</td>
-                    <td>Felica</td>
-                    <td>Jl. Apel No 11</td>
-                    <td>02-08-2003</td>
-                    <td>Perempuan</td>
-                    <td>081265578982</td>
+                    <td scope="col">{{$dp->id}}</td>
+                    <td scope="col">{{$dp->username}}</td>
+                    <!-- <td scope="col">{{$dp->password}}</td> -->
+                    <td scope="col">{{$dp->nama_penumpang}}</td>
+                    <td scope="col">{{$dp->alamat_penumpang}}</td>
+                   <!--  <td scope="col">{{$dp->tanggal_lahir}}</td> -->
+                   <!--  <td scope="col">{{$dp->jenis_kelamin}}</td> -->
+                    <td scope="col">{{$dp->telephone}}</td>
+
                     <td class="d-flex justify-content-between">
-                        <a href="{{route('Tambah.penumpang')}}"><i class="fas fa-plus"></i></a>                       
-                        <a href="{{route('Edit.penumpang')}}"><i class="fas fa-pen"></i></a>
-                        <a href="{{route('Detail.penumpang')}}"><i class="fas fa-eye"></i></a>
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                    </td>
+                        <a href="{{route('Tambah.penumpang')}}"><i class="fas fa-plus"></i></a>
+                        <a href="{{route('Edit.penumpang',$dp->id)}}"><i class="fas fa-pen"></i></a>
+                        <a href="{{route('Detail.penumpang',$dp->id)}}"><i class="fas fa-eye"></i></a>
+                        <form action="{{url('Penumpang/'.$dp->id) }}" class="d-inline" method="post"
+              onsubmit="return confirm('APAKAH ANDA INGIN MENGHAPUS DATA')" >
+            @method('DELETE')
+            @csrf 
+            <button class="btn btn-white" >
+              <i class="fas fa-minus"></i>
+            </button>
+            </form>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>aenjeaye</td>
-                    <td>lnhilokpokpd</td>
-                    <td>Adam</td>
-                    <td>Jl. Akasia No 9</td>
-                    <td>20-05-2003</td>
-                    <td>Laki-laki</td>
-                    <td>081265573211</td>
-                    <td class="d-flex justify-content-between">
-                        <a href="#"><i class="fas fa-eye"></i></a>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <a href="#"><i class="fas fa-pen"></i></a>
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>sabebin</td>
-                    <td>erhirkvkui</td>
-                    <td>Mark</td>
-                    <td>Jl. Pahlawan No 29</td>
-                    <td>20-05-2001</td>
-                    <td>Laki-laki</td>
-                    <td>081265505511</td>
-                    <td class="d-flex justify-content-between">
-                        <a href="#"><i class="fas fa-eye"></i></a>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <a href="#"><i class="fas fa-pen"></i></a>
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                    </td>
-                </tr>
-            </tbody>
+            </thead>
+            @endforeach
         </table>
     </div>
 </body>
