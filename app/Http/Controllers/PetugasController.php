@@ -72,9 +72,12 @@ class PetugasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function EditPetugas($id)
-    {
-            $petugas = Petugas::find($id);
-             return view('Petugas/EditPetugas',compact('petugas'));  
+    {  
+        $data = [
+            'petugas' => Petugas::find($id),
+            'level' => Level::all()
+        ];
+             return view('Petugas/EditPetugas',$data);  
    
     }
 
@@ -98,10 +101,7 @@ class PetugasController extends Controller
         if ($validator->fails()) {
             return redirect('/Petugas')->withErrors($validator)->withInput();
         } else {
-        // $request->validate([
-        //     'nominal' => 'required|max:6'
-        // ]);
-        // return redirect('/spp')->withErrors($request, 'nominal');
+        
         
         
         $petugas = Petugas::find($id);

@@ -28,7 +28,7 @@
 						<label for="nama_level">NAMA LEVEL</label>
 						<input type="text" name="nama_level" value="{{$data_level->nama_level}}" class="form-control">
 						</div>
-					<div>
+					
 					<div class="text-center">
 						<button class="btn btn-primary">Edit</button>
 				</form>

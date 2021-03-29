@@ -27,11 +27,12 @@
 			        @csrf
 			        @method('patch')
 					<div class="form-group">
-					 	<label for="type_transportasi_id">ID Type  :  </label>
+					 	<label for="type_transportasi_id"> Type transportasi  :  </label>
    					 	<select class="form-control" name="type_transportasi_id"  id="type_transportasi_id" required>
      				 	<option >pilih</option>
      				 	@foreach ($type_transportasi as $value)
-     				 	<option value="{{$value->id}}">{{$value->nama_type}}</option>
+     				 	<option value="{{$value->id}}"  @if (old('type_transportasi_id',$transportasi->type_transportasi_id) == $value->id) selected="selected" 
+						  @endif>{{$value->nama_type}}</option>
 						@endforeach
     					</select>
     				</div>

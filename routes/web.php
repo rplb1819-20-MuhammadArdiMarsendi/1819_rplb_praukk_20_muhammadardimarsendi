@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('User/Login');
 
     
 });
@@ -85,7 +85,7 @@ Route::post('/Level/ProsestambahLevel/','LevelController@ProsesTambahLevel')->na
 Route::get('/Level/EditLevel/{id}', 'LevelController@EditLevel')->name('Edit.level');
 Route::get('/Level/ProsesEditLevel/{id}', 'LevelController@update')->name('ProsesEdit.level');
 Route::get('/Level/DetailLevel/{id}', 'LevelController@DetailLevel')->name('Detail.level');
-Route::DELETE('/Level/{id}', 'LevelController@Destroy');
+Route::DELETE('/Level/{id}', 'LevelController@Destroy')->name('hapus');
 
 
 
@@ -105,5 +105,11 @@ Route::get('/TypeTransportasi/DetailTypeTransportasi/{id}', 'TypeTransportasiCon
 Route::DELETE('/TypeTransportasi/{id}','TypeTransportasiController@Hapus');
 
 
+
+
+Route::get('/Transaksi','TransaksiController@index')->name("transaksi.index");
+Route::post('/Transaksi/update/','TransaksiController@store')->name("transaksi.store");
+Route::DELETE('/Transaksi/{id}','TransaksiController@destroy')->name('transaksi.destroy');
+Route::get('/Transaksi/Detail/{id}','TransaksiController@show')->name('transaksi.show');
 
 

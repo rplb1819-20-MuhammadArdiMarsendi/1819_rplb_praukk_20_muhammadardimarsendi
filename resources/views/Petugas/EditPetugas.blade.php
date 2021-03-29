@@ -26,16 +26,20 @@
 				 <form action="{{route('ProsesEdit.petugas',$petugas->id)}}" method="POST">
 			      @method('patch')
 			      @csrf
-					<div class="form-group">
-					 	<label for="level_id">Id Level  :  </label>
-   					 	<input class="form-control" name="level_id"  id="level_id" value="{{$petugas->level_id}}" readonly>
-     				 	
-     				 	
-    				</div>
+				  <div class="form-group">
+					 	<label for="level_id">id Level  :  </label>
+					 	
+   					 	<select class="form-control" name="level_id"  id="level_id">
+				 		 @foreach ($level as $value)
+     				 	<option value="{{$value->id}}" @if (old('level_id',$petugas->level_id) == $value->id) selected="selected" 
+						  @endif>{{$value->nama_level}}</option>
+						@endforeach
+						</select>
+						</div>
 					<div>
 						<div class="form-group">
 						<label for="username">Username</label>
-						<input type="username" name="username" class="form-control" id="username" value="{{$petugas->username}}">
+						<input type="text" name="username" class="form-control" id="username" value="{{$petugas->username}}">
 						</div>
 					<div>
 					<div>

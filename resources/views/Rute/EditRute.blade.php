@@ -27,12 +27,13 @@
 					@method('patch')
 			        @csrf
     				<div class="form-group">
-					 	<label for="transportasi_id">Nama transportasi  :  </label>
+					 	<label for="transportasi_id">kode transportasi  :  </label>
 					 	<!--  @error('transportasi_id') <span style="color: red">{{$message}}</span>@enderror -->
    					 	<select class="form-control" name="transportasi_id"  id="transportasi_id">
      				 	<option >pilih</option>
      				 	@foreach ($transportasi as $value)
-     				 	<option value="{{$value->id}}">{{$value->kode_transportasi}}</option>
+     				 	<option value="{{$value->id}}" @if (old('transportasi_id',$rute->transportasi_id) == $value->id) selected="selected" 
+						  @endif>{{$value->kode_transportasi}}</option>
 						@endforeach
     					</select>
     				</div>
@@ -70,6 +71,7 @@
 						<label for="tanggal_berangkat">Tanggal berangkat</label>
 						<input type="date" name="tanggal_berangkat" value="{{$rute->tanggal_berangkat}}"  id="tanggal_berangkat" class="form-control">
 					</div>
+					
 						<div class="form-group">
 						<label for="harga">HARGA</label>
 						<input type="number" name="harga" id="harga" value="{{$rute->harga}}" class="form-control">

@@ -50,6 +50,9 @@
 
             <h6 class="text-info">TELEPHONE</h6>
             <p>{{$data_penumpang->telephone}}</p>
+
+            <h6 class="text-info">TANGGAL DIBUAT</h6>
+            <p>{{$data_penumpang->created_at}}</p>
       </div>
                     </div>
                 </div>

@@ -30,9 +30,9 @@
 					 	<label for="route_id">id rute  :  </label>
 					 	<!--  @error('transportasi_id') <span style="color: red">{{$message}}</span>@enderror -->
    					 	<select class="form-control" name="route_id"  id="route_id">
-     				 	<option >pilih</option>
      				 	@foreach ($rute as $value)
-     				 	<option value="{{$value->id}}">{{$value->id}}</option>
+     				 	<option value="{{$value->id}}" @if (old('route_id',$penumpang->route_id) == $value->id) selected="selected" 
+						  @endif>{{$value->kota_awal}}</option>
 						@endforeach
     					</select>
     				</div>
@@ -66,11 +66,10 @@
 
 				<div class="form-group">
 					 	<label for="jenis_kelamin">Jenis Kelamin  :  </label>
-					 	<!--  @error('transportasi_id') <span style="color: red">{{$message}}</span>@enderror -->
-   					 	<select class="form-control" name="jenis_kelamin"  id="jenis_kelamin"  value="{{$penumpang->jenis_kelamin}}">
+   					 	<select class="form-control" name="jenis_kelamin"  id="jenis_kelamin" >
      				 	<option >pilih</option>
-     				 	<option value="laki-laki">Laki-Laki</option>
-     				 	<option value="perempuan">Perempuan</option>
+     				 	<option value="laki-laki" {{$penumpang->jenis_kelamin == 'laki-laki' ? 'selected' : ''}}>Laki-Laki</option>
+     				 	<option value="perempuan" {{$penumpang->jenis_kelamin == 'perempuan' ? 'selected' : ''}}>Perempuan</option>
     					</select>
     				</div>
 

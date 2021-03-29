@@ -18,6 +18,7 @@ class CreatePenumpangTable extends Migration
            $table->foreignId('route_id')->constrained('routes');
             $table->string('username')->unique();
             $table->string('password');
+            $table->string('tujuan',255);
             $table->string('nama_penumpang');
             $table->text('alamat_penumpang');
             $table->date('tanggal_lahir');

@@ -55,7 +55,7 @@
 
 					<div class="form-group">
 				    <label for="inputPassword"><i class="fas fa-key"></i> Confirm Password:  </label>
-				    <input type="Password" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" id="inputPassword" name="password_confirmation" placeholder="Konfirmasi Password" required>
+				    <input class="form-control" type="Password" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" id="inputPassword" name="password_confirmation" placeholder="Konfirmasi Password" required>
 				     @if ($errors->has('password_confirmation'))
 				        <div class="invalid-feedback">  
 				            {{ $errors->first('password_confirmation') }}
@@ -63,8 +63,8 @@
 				    @endif
 				  </div>
 			
-						<div class="text-center">
-						<button type="submit" class="btn btn-primary">Register</button>
+						<div class="mt-1 text-center">
+						<button type="submit" class="form-control btn btn-primary">Register</button>
 					</div>
 				</div>
 			</form>

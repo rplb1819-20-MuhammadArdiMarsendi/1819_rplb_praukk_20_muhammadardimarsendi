@@ -18,11 +18,10 @@
             <thead>
                 <tr>
                    <th scope="col">ID TRANSPORTASI</th>
-      <th scope="col">Id Type</th>
+      <th scope="col">Nama Type</th>
       <th scope="col">Kode Type</th>
       <th scope="col">Jumlah Kursi</th>
       <th scope="col">Keterangan</th>
-     
       <th scope="col">AKSI</th>
                 </tr>
             </thead>
@@ -30,7 +29,7 @@
               @foreach($data_transportasi as $data)
                 <tr>
               <th scope="row">{{$data->id}}</th>
-             <td>{{$data->type_transportasi_id}}</td>
+             <td>{{$data->tipe_transportasi->nama_type}}</td>
              <td>{{$data->kode_transportasi}}</td>
              <td>{{$data->jumlah_kursi}}</td>
              <td>{{$data->keterangan}}</td>

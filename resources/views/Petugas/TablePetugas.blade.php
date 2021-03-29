@@ -29,7 +29,7 @@
             <tbody>
                 <tr>
                     <th scope="row">{{$dp->id}}</th>
-                    <td>{{$dp->level_id}}</td>
+                    <td>{{$dp->level->nama_level}}</td>
                     <td>{{$dp->username}}</td>
                     <td>{{$dp->password}}</td>
                     <td>{{$dp->nama_petugas}}</td>

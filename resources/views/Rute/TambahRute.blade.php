@@ -57,6 +57,8 @@
 						<label for="rute_akhir">RUTE AKHIR</label>
 						<input type="text" name="rute_akhir" class="form-control">
 					</div>
+
+					
 		
 					<div class="form-group">
 						<label for="jam_cekin">Jam cekin</label>

@@ -3,7 +3,7 @@
 namespace App\Model\Transportasi;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Model\Type_Transportasi\Type_Transportasi;
 class Transportasi extends Model
 {
      public $table = "transportasi";

@@ -25,6 +25,8 @@
                     <th scope="col">rute akhir</th> -->
                     <th scope="col">jam cekin</th>
                     <th scope="col">jam berangkat</th>
+                    <!-- <th scope="col">Tujuan</th> -->
+
                     <th scope="col">harga</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -33,7 +35,7 @@
             <tbody>
                 <tr>
                     <th scope="row">{{$dr->id}}</th>
-                    <td>{{$dr->transportasi_id}}</td>
+                    <td>{{$dr->transportasi->kode_transportasi}}</td>
                     <td>{{$dr->kota_awal}}</td>
                     <td>{{$dr->kota_akhir}}</td>
                    <!--  <td>{{$dr->rute_awal}}</td>
