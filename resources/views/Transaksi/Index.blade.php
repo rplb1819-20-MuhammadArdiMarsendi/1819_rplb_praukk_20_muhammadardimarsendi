@@ -91,7 +91,7 @@
                         <tr><td>
                         <button type="submit" name="submit" class="btn btn-danger">Simpan</button>
 
-                                <button type="submit" name="submit" class="btn btn-danger">Selesai</button>
+                                <a href="{{route('transaksi.update')}}" class="btn btn-warning" >Selesai</a>
                             </td></tr>
                     </table>
 
@@ -135,11 +135,11 @@
 
                                 {!! Form::open(['route'=>['transaksi.destroy',$item->id],'method'=>'DELETE']) !!}
                                 <td><button type="submit" class="btn btn-danger">Cancel</button></td></tr>
+                                
                                  {!! Form::close() !!}
+                                 
 
-                                 <!-- {!! Form::open(['route'=>['transaksi.show',$item->id]]) !!}
-                                <td><button type="submit" class="btn btn-danger">Detail</button></td></tr>
-                                 {!! Form::close() !!} -->
+                                
                                 
                                 <?php $no++ ?>
                                 <?php $total=$total+($item->rute->harga*$item->qty) ?>

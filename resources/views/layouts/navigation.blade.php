@@ -3,9 +3,9 @@
     <a class="navbar-brand" href="#">TICKET</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Pemesanan</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="{{route('Index.penumpang')}}">Penumpang</a>
         </li>
@@ -24,10 +24,13 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('transaksi.index')}}">Transaksi</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('transaksi.laporan')}}">Laporan</a>
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">logout</a>
+          <a class="nav-link" href="{{route('logout')}}">logout</a>
         </li>     
       </ul>
     </div>

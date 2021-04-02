@@ -45,8 +45,12 @@
 						<label for="password">PASSWORD</label>
 						<input type="password" name="password" class="form-control">
 						</div>
-					<div>
-					<div>
+
+						<div class="form-group">
+						<label for="">Tujuan</label>
+						<input type="text" name="tujuan" class="form-control">
+						</div>
+					
 						<div class="form-group">
 						<label for="nama_penumpang">NAMA PENUMPANG</label>
 						<input type="text" name="nama_penumpang" class="form-control">

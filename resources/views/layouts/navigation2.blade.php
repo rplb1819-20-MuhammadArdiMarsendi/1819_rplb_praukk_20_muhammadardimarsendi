@@ -6,7 +6,7 @@
         <!-- <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Pemesanan</a>
         </li> -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="{{route('Index.penumpang')}}">Penumpang</a>
         </li>
         <li class="nav-item">
@@ -14,7 +14,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('Index.rute')}}">Rute</a>
-        </li>
+        </li> -->
         
         <li class="nav-item">
           <a class="nav-link" href="{{route('transaksi.index')}}">Transaksi</a>
@@ -22,7 +22,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">logout</a>
+          <a class="nav-link" href="{{route('logout')}}">logout</a>
         </li>     
       </ul>
     </div>

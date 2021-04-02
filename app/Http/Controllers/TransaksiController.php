@@ -113,11 +113,25 @@ class TransaksiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        //
+        $transaksi = Pemesanan::where('status','0');
+        $transaksi->update(['status'=>'1']);
+        return redirect()->back();
     }
 
+    public function laporan()
+    {
+        $transaksi = Pemesanan::all();
+        // $transaksi = Pemesanan::where('status','0')->get();
+        return view('Transaksi/Table',compact('transaksi'));
+    }
+    public function Cetaklaporan()
+    {
+        $transaksi = Pemesanan::all();
+        // $transaksi = Pemesanan::where('status','0')->get();
+        return view('Transaksi/Cetak',compact('transaksi'));
+    }
     /**
      * Remove the specified resource from storage.
      *

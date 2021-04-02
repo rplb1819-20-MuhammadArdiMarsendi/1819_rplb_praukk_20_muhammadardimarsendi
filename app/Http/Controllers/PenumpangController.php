@@ -49,6 +49,7 @@ class PenumpangController extends Controller
             'route_id'=>$request->route_id,
             'username'=>$request->username,
             'password'=>$request->password,
+            'tujuan'=>$request->tujuan,
             'nama_penumpang'=>$request->nama_penumpang,
             'alamat_penumpang'=>$request->alamat_penumpang,
             'tanggal_lahir'=>$request->tanggal_lahir,

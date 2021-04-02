@@ -18,18 +18,18 @@ Route::get('/', function () {
 
     
 });
-Route::get('/User/', 'UserController@Homepage')->name('Homepage');
-//INI MERUPAKAN ROUTE UNTUK USER, UNTUK MENGARAHKAN KE LOGIN
-Route::get('/User/Login', 'UserController@Login')->name('Login');
-// ROUTE USER YANG MENGARAHKAN UNTUK KE REGISTER
+// Route::get('/User/', 'UserController@Homepage')->name('Homepage');
+
+Route::get('/Login', 'UserController@Login')->name('Login');
+Route::get('/logout', 'UserController@logout')->name('logout');
+
 Route::get('/User/Register', 'UserController@Register')->name('Register');
 
-Route::get('/User/Dashboard', 'UserController@CekLoginPetugas')->name('Dashboard');
-//ROUTE UNTUK MEMPROSES LOGIN
+
 Route::post('/User/ProsesLogin', 'UserController@ProsesLogin')->name('Proses.Login');
-// ROUTE USER YANG MENGARAHKAN UNTUK KE REGISTER
+
 Route::get('/User/Register', 'UserController@Register')->name('Register');
-//ROUTE UNTUK MEMPROSES REGISTER
+
 Route::post('/User/ProsesRegister', 'UserController@ProsesRegister')->name('Proses.Register');
 
 //Petugas
@@ -110,6 +110,18 @@ Route::DELETE('/TypeTransportasi/{id}','TypeTransportasiController@Hapus');
 Route::get('/Transaksi','TransaksiController@index')->name("transaksi.index");
 Route::post('/Transaksi/update/','TransaksiController@store')->name("transaksi.store");
 Route::DELETE('/Transaksi/{id}','TransaksiController@destroy')->name('transaksi.destroy');
-Route::get('/Transaksi/Detail/{id}','TransaksiController@show')->name('transaksi.show');
+Route::get('/Transaksi/update','TransaksiController@update')->name("transaksi.update");
+Route::get('/Transaksi/laporan','TransaksiController@laporan')->name("transaksi.laporan");
+Route::get('/Transaksi/cetak','TransaksiController@Cetaklaporan')->name("laporan.cetak");
+
+
+
+
+//dashboard
+
+Route::get('/user','PagesController@index')->name("pages.index");
+Route::get('/Admin', 'UserController@CekLoginPetugas')->name('Dashboard');
+Route::post('/user/tambah','PagesController@store')->name("pages.store");
+
 
 

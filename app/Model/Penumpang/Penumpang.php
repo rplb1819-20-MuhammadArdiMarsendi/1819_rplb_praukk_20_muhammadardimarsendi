@@ -8,7 +8,7 @@ class Penumpang extends Model
 {
      public $table = "penumpang";
      public $guarded = [];
-     public $fillable = ['route_id','username', 'password', 'nama_penumpang', 'alamat_penumpang',
+     public $fillable = ['route_id','username', 'password', 'nama_penumpang', 'alamat_penumpang','tujuan',
  							'tanggal_lahir','jenis_kelamin','telephone'];
     
     public function Rute()

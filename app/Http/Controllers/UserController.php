@@ -17,7 +17,7 @@ class UserController extends Controller
         public function ProsesLogin(request $request)
         {
      if(!\Auth::attempt(['name' => $request->name,'password' => $request->password])){
-            return redirect('/User/Dashboard');
+            return redirect('/Admin');
             }
             return redirect('/')->with('message',"username atau password salah");
              }
@@ -45,14 +45,22 @@ class UserController extends Controller
 
     //
 
-                    public function CekLoginPetugas()
-                            {
-                                return view('User/Dashboard');
-                            }
+ public function CekLoginPetugas()
+   {
+    return view('User/Dashboard');
+ }
 
 
-                     public function Homepage()
-                             {
-                        return view('User/Homepage');
-                                }
+ public function Homepage()
+    {
+
+     return view('User/Homepage');
+     }
+
+     public function logout()
+    {
+        Auth::logout();
+        return redirect("/Login");
+     }
+
 }
